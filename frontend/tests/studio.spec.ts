@@ -14,7 +14,8 @@ test('physics uses actual fields and hides CNN output during numerical animation
   await expect(prediction.locator('canvas')).toBeVisible({ timeout: 15_000 });
   await page.getByLabel('Temperature field. Click to place a source, or press Enter for a central source.').click({ position: { x: 90, y: 90 } });
   await expect(page.getByText('03', { exact: true }).last()).toBeVisible();
-  await page.getByRole('button', { name: 'Run simulation', exact: true }).click();
+  // The accessible name also includes the displayed keyboard shortcut.
+  await page.getByRole('button', { name: /^Run simulation\b/ }).click();
   await expect(page.getByText('Simulation ready', { exact: true })).toBeVisible();
   await expect(page.locator('.source-row')).toHaveCount(3);
   expect(errors).toEqual([]);
@@ -35,8 +36,10 @@ test('model explorer shows real hooked activations and interactive skip edges', 
   await expect(page.getByLabel('Activation channel').locator('option')).toHaveCount(32);
   await page.getByLabel('Activation channel').selectOption('4');
   await expect(page.locator('.activation-panel canvas')).toBeVisible();
-  await page.getByRole('button', { name: 'Physics Lab', exact: true }).click();
-  await page.getByRole('button', { name: 'Network Explorer', exact: true }).click();
+  // Scope navigation actions and allow the displayed section numbers in their names.
+  const navigation = page.getByRole('navigation', { name: 'Main navigation' });
+  await navigation.getByRole('button', { name: /^Physics Lab\b/ }).click();
+  await navigation.getByRole('button', { name: /^Network Explorer\b/ }).click();
   await expect(page.locator('.react-flow__node')).toHaveCount(17);
   await expect(page.locator('.activation-panel canvas')).toBeVisible();
   expect(errors).toEqual([]);
@@ -71,9 +74,14 @@ test('training controls are idle on open and existing logs and losses are readab
 test('mobile navigation and scientific panels stay within the viewport', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/#physics');
-  await expect(page.getByText('Simulation ready', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Physics Lab', exact: true })).toBeVisible();
+  // On mobile the status pill is intentionally hidden; a real heatmap proves readiness.
+  await expect(page.locator('canvas[aria-label="Numerical reference"]')).toBeVisible();
+  await expect(page.getByText('Simulation ready', { exact: true })).toBeHidden();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth+1)).toBe(false);
   await page.getByRole('button', { name: 'Open navigation' }).click();
-  await page.getByRole('button', { name: 'Latency Lab' }).click();
+  await page.getByRole('navigation', { name: 'Main navigation' })
+    .getByRole('button', { name: /^Latency Lab\b/ }).click();
   await expect(page.getByRole('heading', { name: 'Latency Lab', exact: true })).toBeVisible();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth+1);
   expect(overflow).toBe(false);
