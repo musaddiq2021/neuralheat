@@ -1,0 +1,11 @@
+OpenSSL 3.0.16 - libcrypto-3.dll and libssl-3.dll
+
+Copyright (c) 1998-2025 The OpenSSL Project
+Copyright (c) 1995-1998 Eric A. Young, Tim J. Hudson
+All rights reserved.
+
+Source: https://github.com/openssl/openssl/blob/openssl-3.0.16/README.md#copyright
+License: Apache-2.0; the full license and author list accompany this attribution.
+The DLL version resources identify OpenSSL 3.0.16. No OpenSSL binaries were
+modified in this documentation review. This attribution is supplied by NeuralHeat
+and is not represented as an upstream NOTICE file.

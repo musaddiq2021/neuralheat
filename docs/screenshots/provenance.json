@@ -1,0 +1,61 @@
+{
+  "method": "manual Windows captures supplied by the maintainer",
+  "reviewed": "2026-10-22",
+  "processing": "Lossless PNG compression only; no crop, resizing or generated content",
+  "scope": "Visual provenance only, not an automated checkpoint or API verification record",
+  "gallery_scope": "Maintainer approved using the available captures; no training/latency captures supplied",
+  "images": [
+    {
+      "image": "loading.png",
+      "description": "Native desktop loading screen",
+      "source": "Screenshot 2026-10-22 120044.png",
+      "width": 1916,
+      "height": 1016,
+      "source_bytes": 48875,
+      "bytes": 44203,
+      "source_sha256": "86fdaa135a44fb55f248e3a97a6c0f0cddb5758658715254554a4ab32dcbb2ab",
+      "sha256": "73f525f7eaf76da486004828ab200a2271f9e647de9e6c9f463a3e0c5715986b",
+      "rgba_sha256": "352035b0646d95ad42267e5492f134b19ece55e9ad6e85ba7291204137ee2b17",
+      "pixels_identical": true
+    },
+    {
+      "image": "overview.png",
+      "description": "System Overview with saved results",
+      "source": "Screenshot 2026-10-22 120110.png",
+      "width": 1899,
+      "height": 982,
+      "source_bytes": 224374,
+      "bytes": 205290,
+      "source_sha256": "fe89af688ed99df1277887d130a42f556a71b0adca0021129160aa7abb768b4f",
+      "sha256": "82e5fae19ef4691a78d33aa3646c0ed1e88259a966f9dc985489cb589fc0f0be",
+      "rgba_sha256": "0a8544362db67d0f197d2a35e4a9e90a47eeaf02bf2c8aec9f6311a5dc2dad4c",
+      "pixels_identical": true
+    },
+    {
+      "image": "physics.png",
+      "description": "Physics Lab at numerical step 120",
+      "source": "Screenshot 2026-10-22 120124.png",
+      "width": 1902,
+      "height": 977,
+      "source_bytes": 215621,
+      "bytes": 184181,
+      "source_sha256": "02a2972476ec29ad3bb02eb94f234f1a9ea2ce93d15a49273435eb490d2af85f",
+      "sha256": "db52daa6a7496ef91c4ef707d7b37d01d34d93f874a50c98bc92daecb722d445",
+      "rgba_sha256": "c9b2d22b901febb42dd33e35b7fc0d50f2e8dc6d666cd52dfc00569689bb5d46",
+      "pixels_identical": true
+    },
+    {
+      "image": "network.png",
+      "description": "Network Explorer with Encoder 01 selected",
+      "source": "Screenshot 2026-10-22 120144.png",
+      "width": 1902,
+      "height": 984,
+      "source_bytes": 234721,
+      "bytes": 214910,
+      "source_sha256": "e308bb68c88a6e064f862e810d2f71e434680e186015d51b956f6c89606858f3",
+      "sha256": "b432a659b2cf586e7a8aac7bdd07349eb935570cee65f0dc8e1b32d7b8a02c42",
+      "rgba_sha256": "0bde4a35884eb59640b2c02b7358fe8a3079a60a175de4b40e95532aa0650aa7",
+      "pixels_identical": true
+    }
+  ]
+}

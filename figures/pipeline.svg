@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420" role="img" aria-labelledby="title description">
+  <title id="title">NEURALHEAT scientific and performance pipeline</title>
+  <desc id="description">Gaussian initial fields go through an explicit finite difference solver to create reference targets. Training fits a residual U-Net on training and validation splits. Held-out evaluation measures accuracy and the latency lab measures solver, resident forward and end-to-end prediction separately.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#5ebee5"/></marker>
+  </defs>
+  <rect width="1080" height="420" rx="16" fill="#101c2c"/>
+  <g fill="#e9f2f8" font-family="sans-serif">
+    <text x="32" y="44" font-size="23" font-weight="bold">NEURALHEAT · numerical reference → learned operator → measured latency</text>
+    <g fill="#1a3148" stroke="#5ebee5" stroke-width="1.5">
+      <rect x="32" y="84" width="215" height="112" rx="8"/>
+      <rect x="300" y="84" width="270" height="112" rx="8"/>
+      <rect x="625" y="84" width="420" height="112" rx="8"/>
+      <rect x="32" y="256" width="350" height="122" rx="8"/>
+      <rect x="436" y="256" width="609" height="122" rx="8"/>
+    </g>
+    <g font-size="17" font-weight="bold">
+      <text x="49" y="113">Gaussian source fields</text>
+      <text x="317" y="113">NumPy numerical reference</text>
+      <text x="642" y="113">Residual U-Net surrogate</text>
+      <text x="49" y="287">Held-out accuracy</text>
+      <text x="453" y="287">Latency lab · matched batches 1 / 16 / 64</text>
+    </g>
+    <g font-size="15" fill="#c2d6e5">
+      <text x="49" y="142">64 × 64 · float32</text>
+      <text x="49" y="167">Disjoint seeded splits</text>
+      <text x="317" y="142">5-point stencil · 120 Euler steps</text>
+      <text x="317" y="167">CFL stable · zero boundary</text>
+      <text x="642" y="142">8 → 16 → 32 channels → 16 → 8 → 1</text>
+      <text x="642" y="167">Encoder skips · identity residual · MSE / Adam</text>
+      <text x="49" y="317">Reference vs CNN vs identity baseline</text>
+      <text x="49" y="344">MSE · RMSE · MAE · relative L2 · worst error</text>
+      <text x="453" y="317">CPU solver  |  CPU CNN  |  CUDA CNN when available</text>
+      <text x="453" y="344">Resident forward / end-to-end · warmups · raw timings · p95</text>
+    </g>
+  </g>
+  <g stroke="#5ebee5" stroke-width="2" marker-end="url(#arrow)" fill="none">
+    <path d="M247 140 H296"/>
+    <path d="M570 140 H621"/>
+    <path d="M175 196 V252"/>
+    <path d="M835 196 V252"/>
+    <path d="M382 318 H432"/>
+  </g>
+  <text x="32" y="404" font-family="sans-serif" font-size="13" fill="#89aabe">Architecture and experiment schematic. No measured results are represented in this diagram.</text>
+</svg>

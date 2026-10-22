@@ -1,0 +1,34 @@
+[
+  {
+    "File": "_internal\\msvcp140.dll",
+    "Version": "14.51.36247.0",
+    "OriginalName": "msvcp140.dll",
+    "Signature": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+    "Sha256": "7C26614E1D733892C2DEAC7E245CE115504B1D80592DD0A01B08E3E5A55F89CA"
+  },
+  {
+    "File": "_internal\\vcruntime140.dll",
+    "Version": "14.51.36247.0",
+    "OriginalName": "vcruntime140.dll",
+    "Signature": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+    "Sha256": "D1F4225DF2CD877DBF130D5668A021DCE3F94118455FF5EC952061C30AFC9CE7"
+  },
+  {
+    "File": "_internal\\vcruntime140_1.dll",
+    "Version": "14.51.36247.0",
+    "OriginalName": "vcruntime140_1.dll",
+    "Signature": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+    "Sha256": "A7146C08F89FE5B04541AB507CDB59FF7B44534D4BA3C668A426C6450A03434E"
+  },
+  {
+    "File": "_internal\\numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+    "Version": "14.40.33810.0",
+    "OriginalName": "msvcp140.dll",
+    "Signature": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+    "Sha256": "A4C2229BDC2A2A630ACDC095B4D86008E5C3E3BC7773174354F3DA4F5BEB9CDE"
+  }
+]

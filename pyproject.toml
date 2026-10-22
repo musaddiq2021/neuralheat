@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neuralheat"
+version = "0.1.0"
+description = "PyTorch physics surrogate and reproducible heat-equation latency lab"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["numpy>=1.26,<3", "torch>=2.2,<3", "matplotlib>=3.8,<4"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+studio = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "httpx>=0.27,<1"]
+desktop = ["pywebview>=5.4,<7", "pyinstaller>=6.15,<7", "pillow>=10,<13"]
+
+[project.scripts]
+neuralheat-data = "neuralheat.dataset:main"
+neuralheat-train = "neuralheat.train:main"
+neuralheat-evaluate = "neuralheat.evaluate:main"
+neuralheat-benchmark = "neuralheat.benchmark:main"
+neuralheat-studio = "neuralheat.desktop.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_*.py" = ["E402"]
+"src/neuralheat/visualization.py" = ["E402"]

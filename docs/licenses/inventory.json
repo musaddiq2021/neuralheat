@@ -1,0 +1,269 @@
+{
+  "scope": "Python license evidence from the existing frozen release; conservative installed frontend runtime dependency closure plus Tailwind's license. Not a claim that every listed package is bundled.",
+  "frontend": [
+    {
+      "name": "@types/d3-color",
+      "version": "3.1.3",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/types_d3-color-3.1.3/LICENSE"
+      ]
+    },
+    {
+      "name": "@types/d3-drag",
+      "version": "3.0.7",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/types_d3-drag-3.0.7/LICENSE"
+      ]
+    },
+    {
+      "name": "@types/d3-interpolate",
+      "version": "3.0.4",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/types_d3-interpolate-3.0.4/LICENSE"
+      ]
+    },
+    {
+      "name": "@types/d3-selection",
+      "version": "3.0.12",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/types_d3-selection-3.0.12/LICENSE"
+      ]
+    },
+    {
+      "name": "@types/d3-transition",
+      "version": "3.0.9",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/types_d3-transition-3.0.9/LICENSE"
+      ]
+    },
+    {
+      "name": "@types/d3-zoom",
+      "version": "3.0.9",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/types_d3-zoom-3.0.9/LICENSE"
+      ]
+    },
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/types_react-19.3.0/LICENSE"
+      ]
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.3.0",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/types_react-dom-19.3.0/LICENSE"
+      ]
+    },
+    {
+      "name": "@xyflow/react",
+      "version": "12.12.0",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/xyflow_react-12.12.0/LICENSE"
+      ]
+    },
+    {
+      "name": "@xyflow/system",
+      "version": "0.0.83",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/xyflow_system-0.0.83/LICENSE"
+      ]
+    },
+    {
+      "name": "classcat",
+      "version": "5.0.5",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/classcat-5.0.5/LICENSE.md"
+      ]
+    },
+    {
+      "name": "csstype",
+      "version": "3.2.3",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/csstype-3.2.3/LICENSE"
+      ]
+    },
+    {
+      "name": "d3-color",
+      "version": "3.1.0",
+      "declared_license": "ISC",
+      "license_files": [
+        "docs/licenses/frontend/d3-color-3.1.0/LICENSE"
+      ]
+    },
+    {
+      "name": "d3-dispatch",
+      "version": "3.0.1",
+      "declared_license": "ISC",
+      "license_files": [
+        "docs/licenses/frontend/d3-dispatch-3.0.1/LICENSE"
+      ]
+    },
+    {
+      "name": "d3-drag",
+      "version": "3.0.0",
+      "declared_license": "ISC",
+      "license_files": [
+        "docs/licenses/frontend/d3-drag-3.0.0/LICENSE"
+      ]
+    },
+    {
+      "name": "d3-ease",
+      "version": "3.0.1",
+      "declared_license": "BSD-3-Clause",
+      "license_files": [
+        "docs/licenses/frontend/d3-ease-3.0.1/LICENSE"
+      ]
+    },
+    {
+      "name": "d3-interpolate",
+      "version": "3.0.1",
+      "declared_license": "ISC",
+      "license_files": [
+        "docs/licenses/frontend/d3-interpolate-3.0.1/LICENSE"
+      ]
+    },
+    {
+      "name": "d3-selection",
+      "version": "3.0.0",
+      "declared_license": "ISC",
+      "license_files": [
+        "docs/licenses/frontend/d3-selection-3.0.0/LICENSE"
+      ]
+    },
+    {
+      "name": "d3-timer",
+      "version": "3.0.1",
+      "declared_license": "ISC",
+      "license_files": [
+        "docs/licenses/frontend/d3-timer-3.0.1/LICENSE"
+      ]
+    },
+    {
+      "name": "d3-transition",
+      "version": "3.0.1",
+      "declared_license": "ISC",
+      "license_files": [
+        "docs/licenses/frontend/d3-transition-3.0.1/LICENSE"
+      ]
+    },
+    {
+      "name": "d3-zoom",
+      "version": "3.0.0",
+      "declared_license": "ISC",
+      "license_files": [
+        "docs/licenses/frontend/d3-zoom-3.0.0/LICENSE"
+      ]
+    },
+    {
+      "name": "react",
+      "version": "19.3.0",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/react-19.3.0/LICENSE"
+      ]
+    },
+    {
+      "name": "react",
+      "version": "19.3.1",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/react-19.3.1/LICENSE"
+      ]
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.0",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/react-dom-19.3.0/LICENSE"
+      ]
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.1",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/react-dom-19.3.1/LICENSE"
+      ]
+    },
+    {
+      "name": "scheduler",
+      "version": "0.28.0",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/scheduler-0.28.0/LICENSE"
+      ]
+    },
+    {
+      "name": "tailwindcss",
+      "version": "3.4.19",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/tailwindcss-3.4.19/LICENSE"
+      ]
+    },
+    {
+      "name": "three",
+      "version": "0.180.0",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/three-0.180.0/LICENSE"
+      ]
+    },
+    {
+      "name": "use-sync-external-store",
+      "version": "1.7.0",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/use-sync-external-store-1.7.0/LICENSE"
+      ]
+    },
+    {
+      "name": "zustand",
+      "version": "4.5.7",
+      "declared_license": "MIT",
+      "license_files": [
+        "docs/licenses/frontend/zustand-4.5.7/LICENSE"
+      ]
+    }
+  ],
+  "missing_frontend_evidence": [],
+  "certifi_covered_source": {
+    "version": "2026.4.22",
+    "bundled_ca_sha256": "16be3f6feb15408195dcfe3aa1a75ef9db72f646b96ebbefdc68f56255f799f8",
+    "source_files": {
+      "certifi/__init__.py": "8812585adc5118731a3b54bbde9598a459fdeb6590e257687f61a47cc4911093",
+      "certifi/__main__.py": "c410688fdd394d45812d118034e71fee88ba7beddd30fe1c1281bd3b232cd758",
+      "certifi/core.py": "5c55f2727746e697f7edac9e17c377d8752e0da7ecca191531b3b80403d61dad",
+      "certifi/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "certifi/cacert.pem": "16be3f6feb15408195dcfe3aa1a75ef9db72f646b96ebbefdc68f56255f799f8",
+      "LICENSE": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+      "MPL-2.0.txt": "d3d6ed2a709a8b82c04a556fc93654a7d4f40d53724d8fdac0ea69aff7087c1e",
+      "SOURCE.txt": "41a9e03fcfeeee3a52709ecb1dffb023b81749696c0eb5b614c78e390988e7a4"
+    },
+    "archive": "NeuralHeat-Studio-Certifi-2026.4.22-Source.zip",
+    "archive_bytes": 139214,
+    "archive_sha256": "09ce63e5441a41d6ffae309f5c3db584605ef5db5f45d9d395ae9d5801d3eeee",
+    "archive_verified": true
+  },
+  "binary_release_review_required": [
+    "Identify the publisher's validly licensed Visual Studio/Build Tools edition and accepted applicable terms; establish unmodified DLL provenance against its REDIST grant, including NumPy's 14.40 hash-named copy",
+    "Retain package-specific NVIDIA redistribution evidence for the cuSOLVER Mg DLL variant, which the generic CUDA Attachment A does not explicitly name",
+    "Publish and deliver the unchanged installer together with the mandatory complete notice attachment and certifi covered source; installer alone is not notice-complete"
+  ]
+}

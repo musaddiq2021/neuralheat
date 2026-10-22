@@ -1,0 +1,7 @@
+certifi 2026.4.22: corresponding source for NeuralHeat Studio's frozen release.
+Unmodified editable Python modules and CA bundle from the matching build environment.
+The CA data was byte-compared against _internal/certifi/cacert.pem.
+No private keys: cacert.pem contains public certificate authority certificates.
+Under MPL-2.0; see LICENSE and MPL-2.0.txt.
+Upstream: https://pypi.org/project/certifi/2026.4.22/#files
+Source tree: docs/licenses/covered-source; rename cacert.pem.txt to cacert.pem.

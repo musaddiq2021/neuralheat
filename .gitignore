@@ -1,0 +1,106 @@
+# Python environments, caches and package output
+.venv/
+venv/
+env/
+.python/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.cache/
+.pytest_cache/
+.pytest_tmp/
+.ruff_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+pytest-cache-files-*/
+neuralheat.pytest_tmp/
+
+# Node dependencies, production bundles and browser test artifacts
+node_modules/
+dist/
+build/
+coverage/
+frontend/test-results/
+frontend/playwright-report/
+*.tsbuildinfo
+
+# Generated datasets, checkpoints and experiments stay local.
+# Publish the reference checkpoint as a GitHub Release asset instead.
+/data/
+/runs/
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+# Keep only the small, curated scientific evidence in the source repository.
+# Local build/installer logs can contain usernames, machine paths and sessions.
+/reports/*
+!/reports/.gitkeep
+!/reports/benchmark.json
+!/reports/benchmark.csv
+!/reports/benchmark.md
+!/reports/evaluation.json
+
+# Release binaries and archives belong in GitHub Releases, never Git history.
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+*.tar.xz
+*.txz
+*.gz
+*.xz
+*.exe
+*.msi
+*.msix
+*.msixbundle
+*.appx
+*.dll
+*.pyd
+*.bin
+
+# Local credentials, signing keys, machine configuration and assistant state
+.env
+.env.*
+!.env.example
+.npmrc
+.pypirc
+.netrc
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+.aws/
+.ssh/
+.azure/
+.gcloud/
+.codex/
+.agents/
+.idea/
+.vscode/
+
+# Editor/OS scratch files and runtime logs
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Original manual captures stay local; lossless named copies are published.
+docs/screenshots/Screenshot*.png

@@ -1,0 +1,9 @@
+{
+  "name": "full",
+  "seed": 20261021,
+  "physics": {"grid_size": 64, "alpha": 0.1, "steps": 120, "length": 1.0, "cfl_safety": 0.9},
+  "data": {"train": 2000, "validation": 300, "test": 300},
+  "model": {"base_channels": 8},
+  "training": {"epochs": 80, "batch_size": 64, "learning_rate": 0.001, "patience": 12, "min_delta": 0.00000001, "threads": 4},
+  "benchmark": {"batch_sizes": [1, 16, 64], "warmup": 10, "repeats": 100, "threads": 1}
+}

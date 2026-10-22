@@ -1,0 +1,9 @@
+{
+  "name": "smoke",
+  "seed": 20261022,
+  "physics": {"grid_size": 64, "alpha": 0.1, "steps": 120, "length": 1.0, "cfl_safety": 0.9},
+  "data": {"train": 64, "validation": 16, "test": 64},
+  "model": {"base_channels": 8},
+  "training": {"epochs": 3, "batch_size": 16, "learning_rate": 0.001, "patience": 3, "min_delta": 0.00000001, "threads": 4},
+  "benchmark": {"batch_sizes": [1, 16, 64], "warmup": 3, "repeats": 20, "threads": 1}
+}

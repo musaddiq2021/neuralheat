@@ -1,0 +1,226 @@
+﻿[
+    {
+        "file":  "_internal/torch/lib/cublas64_12.dll",
+        "bytes":  113716224,
+        "file_version":  "6,14,11,1284",
+        "product_version":  "6,14,11,1284",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/cublasLt64_12.dll",
+        "bytes":  674667520,
+        "file_version":  "6,14,11,1284",
+        "product_version":  "6,14,11,1284",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/cudart64_12.dll",
+        "bytes":  573952,
+        "file_version":  "6,14,11,12080",
+        "product_version":  "6,14,11,12080",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/cudnn64_9.dll",
+        "bytes":  264304,
+        "file_version":  "9.19.0.56",
+        "product_version":  "9.19.0.56",
+        "publisher":  "Windows (R) Win 7 DDK provider"
+    },
+    {
+        "file":  "_internal/torch/lib/cudnn_adv64_9.dll",
+        "bytes":  269016688,
+        "file_version":  "9.19.0.56",
+        "product_version":  "9.19.0.56",
+        "publisher":  "Windows (R) Win 7 DDK provider"
+    },
+    {
+        "file":  "_internal/torch/lib/cudnn_cnn64_9.dll",
+        "bytes":  2984560,
+        "file_version":  "9.19.0.56",
+        "product_version":  "9.19.0.56",
+        "publisher":  "Windows (R) Win 7 DDK provider"
+    },
+    {
+        "file":  "_internal/torch/lib/cudnn_engines_precompiled64_9.dll",
+        "bytes":  481015408,
+        "file_version":  "9.19.0.56",
+        "product_version":  "9.19.0.56",
+        "publisher":  "Windows (R) Win 7 DDK provider"
+    },
+    {
+        "file":  "_internal/torch/lib/cudnn_engines_runtime_compiled64_9.dll",
+        "bytes":  27759216,
+        "file_version":  "9.19.0.56",
+        "product_version":  "9.19.0.56",
+        "publisher":  "Windows (R) Win 7 DDK provider"
+    },
+    {
+        "file":  "_internal/torch/lib/cudnn_graph64_9.dll",
+        "bytes":  2493040,
+        "file_version":  null,
+        "product_version":  null,
+        "publisher":  null
+    },
+    {
+        "file":  "_internal/torch/lib/cudnn_heuristic64_9.dll",
+        "bytes":  58874992,
+        "file_version":  null,
+        "product_version":  null,
+        "publisher":  null
+    },
+    {
+        "file":  "_internal/torch/lib/cudnn_ops64_9.dll",
+        "bytes":  105604208,
+        "file_version":  "9.19.0.56",
+        "product_version":  "9.19.0.56",
+        "publisher":  "Windows (R) Win 7 DDK provider"
+    },
+    {
+        "file":  "_internal/torch/lib/cufft64_11.dll",
+        "bytes":  276121600,
+        "file_version":  "6,14,11,1133",
+        "product_version":  "6,14,11,1133",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/cufftw64_11.dll",
+        "bytes":  163328,
+        "file_version":  "6,14,11,1133",
+        "product_version":  "6,14,11,1133",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/curand64_10.dll",
+        "bytes":  71955968,
+        "file_version":  "6,14,11,1039",
+        "product_version":  "6,14,11,1039",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/cusolver64_11.dll",
+        "bytes":  225683456,
+        "file_version":  "6,14,11,1173",
+        "product_version":  "6,14,11,1173",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/cusolverMg64_11.dll",
+        "bytes":  157071360,
+        "file_version":  "6,14,11,1173",
+        "product_version":  "6,14,11,1173",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/cusparse64_12.dll",
+        "bytes":  379535872,
+        "file_version":  "6,14,11,1258",
+        "product_version":  "6,14,11,1258",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/nvJitLink_120_0.dll",
+        "bytes":  77860352,
+        "file_version":  "6.14.11.9000",
+        "product_version":  "6.14.11.9000",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/nvrtc-builtins64_128.dll",
+        "bytes":  6356480,
+        "file_version":  null,
+        "product_version":  null,
+        "publisher":  null
+    },
+    {
+        "file":  "_internal/torch/lib/nvrtc64_120_0.alt.dll",
+        "bytes":  86794240,
+        "file_version":  "6.14.11.9000",
+        "product_version":  "6.14.11.9000",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/nvrtc64_120_0.dll",
+        "bytes":  86728192,
+        "file_version":  "6.14.11.9000",
+        "product_version":  "6.14.11.9000",
+        "publisher":  "NVIDIA Corporation"
+    },
+    {
+        "file":  "_internal/torch/lib/nvToolsExt64_1.dll",
+        "bytes":  48128,
+        "file_version":  null,
+        "product_version":  null,
+        "publisher":  null
+    },
+    {
+        "file":  "_internal/libcrypto-3.dll",
+        "bytes":  5231472,
+        "file_version":  "3.0.16",
+        "product_version":  "3.0.16",
+        "publisher":  "The OpenSSL Project, https://www.openssl.org/"
+    },
+    {
+        "file":  "_internal/libssl-3.dll",
+        "bytes":  794992,
+        "file_version":  "3.0.16",
+        "product_version":  "3.0.16",
+        "publisher":  "The OpenSSL Project, https://www.openssl.org/"
+    },
+    {
+        "file":  "_internal/msvcp140.dll",
+        "bytes":  643512,
+        "file_version":  "14.51.36247.0",
+        "product_version":  "14.51.36247.0",
+        "publisher":  "Microsoft Corporation"
+    },
+    {
+        "file":  "_internal/vcruntime140.dll",
+        "bytes":  178616,
+        "file_version":  "14.51.36247.0",
+        "product_version":  "14.51.36247.0",
+        "publisher":  "Microsoft Corporation"
+    },
+    {
+        "file":  "_internal/vcruntime140_1.dll",
+        "bytes":  50112,
+        "file_version":  "14.51.36247.0",
+        "product_version":  "14.51.36247.0",
+        "publisher":  "Microsoft Corporation"
+    },
+    {
+        "file":  "_internal/webview/lib/Microsoft.Web.WebView2.Core.dll",
+        "bytes":  649800,
+        "file_version":  "1.0.3856.49",
+        "product_version":  "1.0.3856.49",
+        "publisher":  "Microsoft"
+    },
+    {
+        "file":  "_internal/webview/lib/Microsoft.Web.WebView2.WinForms.dll",
+        "bytes":  39016,
+        "file_version":  "1.0.3856.49",
+        "product_version":  "1.0.3856.49",
+        "publisher":  "Microsoft"
+    },
+    {
+        "file":  "_internal/webview/lib/runtimes/win-arm64/native/WebView2Loader.dll",
+        "bytes":  147016,
+        "file_version":  "1.0.3856.49",
+        "product_version":  "1.0.3856.49",
+        "publisher":  "Microsoft Corporation"
+    },
+    {
+        "file":  "_internal/webview/lib/runtimes/win-x64/native/WebView2Loader.dll",
+        "bytes":  161864,
+        "file_version":  "1.0.3856.49",
+        "product_version":  "1.0.3856.49",
+        "publisher":  "Microsoft Corporation"
+    },
+    {
+        "file":  "_internal/webview/lib/runtimes/win-x86/native/WebView2Loader.dll",
+        "bytes":  121928,
+        "file_version":  "1.0.3856.49",
+        "product_version":  "1.0.3856.49",
+        "publisher":  "Microsoft Corporation"
+    }
+]

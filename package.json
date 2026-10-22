@@ -1,0 +1,22 @@
+{
+  "name": "neuralheat-studio-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {"node": ">=22.12.0"},
+  "workspaces": ["frontend"],
+  "scripts": {
+    "desktop:installer": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build_installer.ps1",
+    "desktop:installer:test": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test_installer.ps1",
+    "desktop:package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package_distribution.ps1",
+    "desktop:build": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build_desktop.ps1",
+    "desktop:test": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test_desktop.ps1",
+    "dashboard": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start_dashboard.ps1",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "typecheck": "npm --prefix frontend run typecheck",
+    "test": "npm --prefix frontend test",
+    "test:browser": "npm --prefix frontend run test:browser"
+  }
+}

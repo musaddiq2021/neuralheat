@@ -1,0 +1,40 @@
+NEURALHEAT STUDIO - THIRD-PARTY BINARY DISTRIBUTION TERMS
+
+Read this document and the accompanying third-party notices before installation.
+NeuralHeat's own source code is MIT licensed. The NVIDIA and Microsoft runtime
+components in the Windows installer are separate works with their own terms;
+the MIT license does not grant rights to those proprietary components.
+
+NVIDIA CUDA and cuDNN runtime libraries are supplied solely as incorporated
+components of NeuralHeat Studio, which adds heat simulation, scientific model
+inspection, training and benchmarking functionality. Access the supplied runtime
+components through this application. Do not redistribute them as a standalone
+SDK, remove proprietary notices, or reverse engineer, decompile or disassemble
+them except where applicable law or the governing vendor terms permit it.
+Do not subject NVIDIA's proprietary components to a source-disclosure or other
+conflicting license. No NVIDIA endorsement is claimed. CUDA operations target
+NVIDIA GPUs; the independent CPU implementation remains available.
+
+The complete retained CUDA 12.8.1 and cuDNN 9.19.0 agreements, supplements and
+notices are in the accompanying third-party notice attachment. Their license
+grants, limitations, export provisions and other conditions continue to apply.
+These application-specific conditions do not replace or expand vendor grants.
+
+Microsoft Visual C++ components remain Microsoft property and must be preserved
+unmodified, with their notices, as application dependencies. They are not offered
+as a separate runtime product. The publisher must establish the applicable
+Visual Studio license and REDIST entitlement before public binary distribution.
+The exact WebView2 SDK bridge has its own retained BSD-style Microsoft license.
+The Evergreen WebView2 browser runtime is a separate system prerequisite and is
+not part of this installer.
+
+Recipients retain the rights granted by each open-source dependency's license.
+The matching certifi covered source and full MPL-2.0 are provided separately;
+the corresponding-source ZIP is part of the release materials. No additional
+restriction here limits rights granted by MIT, BSD, Apache, MPL or other
+open-source licenses for their respective covered files.
+
+Share the installer together with NeuralHeat-Studio-Third-Party-Notices.txt,
+the certifi corresponding-source ZIP and the checksums. A link to the installer
+alone omits the added notices absent from the original verified build. Keep
+these accompanying documents with offline copies and downstream distributions.
