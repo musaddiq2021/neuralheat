@@ -42,10 +42,18 @@ try {
     Invoke-Checked 'git' @('fetch','origin','main','--tags')
     if ((& git branch --show-current).Trim() -ne 'main') { throw 'Use the existing main worktree.' }
     $head = (& git rev-parse HEAD).Trim()
-    Invoke-Checked 'git' @('merge-base','--is-ancestor',$head,$source.commit_sha)
+    $publicationHead = (& git rev-parse 'origin/main').Trim()
+    Invoke-Checked 'git' @('merge-base','--is-ancestor',$source.commit_sha,$publicationHead)
+    # A publication-helper correction may follow the frozen release source.
+    # Keep the tag/provenance pinned; reject any change to application or assets.
+    $followupPaths = @(& git diff --name-only $source.commit_sha $publicationHead)
+    if ($LASTEXITCODE -ne 0 -or @($followupPaths | Where-Object { $_ -ne 'scripts/publish_github_release.ps1' }).Count) {
+        throw 'Main contains changes beyond the publication helper; review before publishing the pinned release.'
+    }
+    Invoke-Checked 'git' @('merge-base','--is-ancestor',$head,$publicationHead)
     # The source was committed through GitHub because this executor could not
     # write .git. Fast-forward local metadata; --mixed changes no working files.
-    if ($head -ne $source.commit_sha) { Invoke-Checked 'git' @('reset','--mixed',$source.commit_sha) }
+    if ($head -ne $publicationHead) { Invoke-Checked 'git' @('reset','--mixed',$publicationHead) }
     $dirty = @(& git status --porcelain)
     if ($dirty.Count) { throw 'Working source differs from the published commit. Review git status before tagging.' }
     Invoke-Checked 'git' @('push','origin','main')
@@ -98,6 +106,13 @@ try {
     # never silently replaced or made private by a retry.
     if (-not $exists -or $existing.draft) {
         foreach ($name in $assetNames) {
+            $savedAsset = @($existing.assets | Where-Object { $_.name -eq $name })
+            if ($savedAsset.Count -eq 1 -and $savedAsset[0].state -eq 'uploaded' -and
+                $savedAsset[0].size -eq $uploadExpected[$name].bytes -and
+                $savedAsset[0].digest -eq ('sha256:'+$uploadExpected[$name].sha256)) {
+                Write-Host "Already verified on GitHub: $name"
+                continue
+            }
             $uploaded = $false
             for ($attempt=1; $attempt -le 3; $attempt++) {
                 & $ghExe release upload $tag (Join-Path $releaseRoot $name) --repo $repository --clobber
@@ -107,7 +122,14 @@ try {
             if (-not $uploaded) { throw "Upload failed: $name. Release remains draft; rerun safely." }
         }
     }
-    $remoteText = & $ghExe api "repos/$repository/releases/tags/$tag"
+    # GitHub's by-tag endpoint excludes drafts. Resolve the ID from the list,
+    # then inspect that release before making anything public.
+    $verifyList = & $ghExe api "repos/$repository/releases?per_page=100"
+    if ($LASTEXITCODE -ne 0) { throw 'Cannot find the uploaded draft.' }
+    $verifyMatches = @((($verifyList -join "`n") | ConvertFrom-Json) | ForEach-Object { $_ } | Where-Object { $_.tag_name -eq $tag })
+    if ($verifyMatches.Count -ne 1) { throw 'Expected exactly one release for the approved tag.' }
+    $releaseId = $verifyMatches[0].id
+    $remoteText = & $ghExe api "repos/$repository/releases/$releaseId"
     if ($LASTEXITCODE -ne 0) { throw 'Cannot verify uploaded release assets.' }
     $remote = $remoteText | ConvertFrom-Json
     foreach ($name in $assetNames) {
