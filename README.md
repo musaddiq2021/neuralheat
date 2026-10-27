@@ -1,8 +1,13 @@
 
-## Download NeuralHeat Studio
+## Download NeuralHeat Studio for Windows
 
-[**Download for Windows (.exe)**](https://github.com/musaddiq2021/neuralheat/releases/download/v1.0.0-beta.1/NeuralHeat-Studio-Setup.exe)
-****
+**NeuralHeat Studio v1.0.0-beta.1**
+
+[⬇ Download Windows Installer (.exe)](https://github.com/musaddiq2021/neuralheat/releases/download/v1.0.0-beta.1/NeuralHeat-Studio-Setup.exe)
+
+Windows 10/11 (64-bit) · 1.69 GiB · Free and open source
+
+No Python or Node.js installation required.
 
 # NeuralHeat Studio
 
