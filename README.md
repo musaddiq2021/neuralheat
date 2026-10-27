@@ -1,3 +1,9 @@
+
+## Download NeuralHeat Studio
+
+[**Download for Windows (.exe)**](https://github.com/musaddiq2021/neuralheat/releases/download/v1.0.0-beta.1/NeuralHeat-Studio-Setup.exe)
+****
+
 # NeuralHeat Studio
 
 **A local scientific workstation for heat diffusion, PyTorch surrogates and measured inference performance.**
