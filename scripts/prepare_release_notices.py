@@ -156,14 +156,15 @@ def prepare(root: Path, bundle: Path, output: Path) -> dict:
         "",
         "NeuralHeat's own code is MIT licensed. Dependencies retain their own licenses.",
         "Keep these notices and the accompanying covered-source ZIP with the installer.",
-        "The publisher's MSVC entitlement remains pending; see the redistribution review below.",
+        "Microsoft and NVIDIA components retain their own terms; they are not relicensed under MIT.",
+        "The retained agreements, protective binary conditions and complete attributions follow.",
         "",
         (root / "LICENSE").read_text(encoding="utf-8"),
-        (root / "THIRD_PARTY_NOTICES.md").read_text(encoding="utf-8"),
         (destination / "BINARY_DISTRIBUTION_TERMS.txt").read_text(encoding="utf-8"),
     ]
     for path in sorted(destination.rglob("*")):
-        if path.is_file() and path.suffix != ".json" and "covered-source" not in path.parts:
+        # The readable extraction accompanies any archived original Word licence.
+        if path.is_file() and path.suffix not in {".json", ".docx", ".rtf"} and "covered-source" not in path.parts:
             text.extend(
                 [
                     "\n" + "=" * 72,
@@ -193,7 +194,17 @@ def prepare(root: Path, bundle: Path, output: Path) -> dict:
             "local_path": str(path.relative_to(root)),
         }
         manifest["assets"] = [r for r in manifest["assets"] if r["file"] != path.name] + [record]
-    manifest["binary_publication_ready"] = not result["binary_release_review_required"]
+    review = json.loads((destination / "redistribution-review.json").read_text(encoding="utf-8"))
+    installer_records = [row for row in manifest["assets"]
+                         if row["file"] == "NeuralHeat-Studio-Setup.exe"]
+    # This older support manifest can still describe the preserved retained-Mg
+    # installer. A cleared beta must never silently clear a different SHA256.
+    manifest["licence_review_ready"] = not result["binary_release_review_required"]
+    manifest["binary_publication_ready"] = (
+        manifest["licence_review_ready"] and bool(installer_records)
+        and all(row["sha256"] == review.get("installer_sha256") for row in installer_records)
+    )
+    manifest["readiness_scope"] = "Only the installer SHA256 listed in this manifest; the beta has its own dist/releases/v1.0.0-beta.1/release-manifest.json."
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     (output / "SHA256SUMS.txt").write_text(
         "".join(f"{row['sha256']}  {row['file']}\n" for row in manifest["assets"]), encoding="ascii"

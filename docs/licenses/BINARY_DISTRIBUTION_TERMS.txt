@@ -20,10 +20,30 @@ notices are in the accompanying third-party notice attachment. Their license
 grants, limitations, export provisions and other conditions continue to apply.
 These application-specific conditions do not replace or expand vendor grants.
 
-Microsoft Visual C++ components remain Microsoft property and must be preserved
-unmodified, with their notices, as application dependencies. They are not offered
-as a separate runtime product. The publisher must establish the applicable
-Visual Studio license and REDIST entitlement before public binary distribution.
+By installing or redistributing this binary application, you agree to the
+following conditions for its proprietary Microsoft runtime components, subject
+to mandatory applicable law and any greater rights in the governing terms.
+Microsoft Visual C++ components remain Microsoft property. Preserve their
+unmodified object code and notices as application dependencies. Do not work
+around their technical limitations, reverse engineer, decompile, disassemble or
+attempt to derive their source except where applicable law or governing
+open-source terms require that right. Do not remove or minimize notices, use
+the components unlawfully, or offer them as a standalone runtime/SDK, rental or
+service without a separate applicable grant. No Microsoft endorsement is claimed.
+Do not subject Microsoft's proprietary code to a licence requiring source
+disclosure or modification rights. Follow applicable export and sanctions laws.
+
+Redistribution of Microsoft Distributable Code relies on the applicable Visual
+Studio grant and REDIST list; the runtime installation/use EULA alone is not a
+redistribution grant. Distributors must retain these conditions and accompanying
+notices, add significant primary application functionality, and require
+downstream terms that protect Microsoft's code at least as much as the governing
+terms. The publisher's accepted Visual Studio distribution indemnity obligation
+remains applicable; it is not erased or transferred to users simply running
+NeuralHeat. Microsoft's supplied components are provided as-is, subject to the
+complete retained warranty/liability terms and mandatory consumer rights.
+End users do not need Visual Studio merely to run NeuralHeat Studio.
+
 The exact WebView2 SDK bridge has its own retained BSD-style Microsoft license.
 The Evergreen WebView2 browser runtime is a separate system prerequisite and is
 not part of this installer.

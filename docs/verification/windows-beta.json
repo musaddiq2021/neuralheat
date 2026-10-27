@@ -1,0 +1,88 @@
+{
+  "release": "v1.0.0-beta.1",
+  "status": "verified",
+  "completed_at": "2026-10-27T10:11:43.382373+00:00",
+  "verification": "Actual installer and installed frozen application, executed in elevated normal Windows PowerShell; machine-readable reports inspected separately by the release agent.",
+  "installer": "NeuralHeat-Studio-Setup.exe",
+  "installer_bytes": 1813363530,
+  "installer_sha256": "ecf3f57dcc2f8b50144c42e505559f71550d1f75466c3734aab16ec78d69171f",
+  "installer_gb": 1.81336353,
+  "installer_gib": 1.6888263914734125,
+  "uncompressed_application_bytes": 4338077017,
+  "application_files_verified": 2801,
+  "install_scope": "all_users_program_files",
+  "checks": {
+    "installed-cpu": true,
+    "installed-auto-worker": true,
+    "installed-webview": true,
+    "cpu_fallback": true,
+    "automatic_device": true,
+    "training_and_cancel": true,
+    "all_ui_pages_and_resize": true,
+    "cuda_on_cuda_test_host": true,
+    "installer_executed": true,
+    "uninstall_registration": true,
+    "shortcuts": true,
+    "installed_integrity": true,
+    "default_appdata_location": true,
+    "source_unchanged": true,
+    "uninstall_preserves_personal_data": true
+  },
+  "installed_runtime": {
+    "installed-cpu": {
+      "status": "passed",
+      "frozen": true,
+      "device": "cpu",
+      "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+      "asset_hashes_verified": 68,
+      "graph_nodes": 17,
+      "graph_edges": 19,
+      "webview2": null,
+      "backend_port_closed": true
+    },
+    "installed-auto-worker": {
+      "status": "passed",
+      "frozen": true,
+      "device": "cuda",
+      "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+      "asset_hashes_verified": 68,
+      "graph_nodes": 17,
+      "graph_edges": 19,
+      "webview2": null,
+      "backend_port_closed": true
+    },
+    "installed-webview": {
+      "status": "passed",
+      "frozen": true,
+      "device": "cuda",
+      "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+      "asset_hashes_verified": 68,
+      "graph_nodes": 17,
+      "graph_edges": 19,
+      "webview2": {
+        "physics": "passed",
+        "network": "passed",
+        "training": "passed",
+        "latency": "passed",
+        "resize": "passed"
+      },
+      "backend_port_closed": true
+    }
+  },
+  "training_and_cancel": {
+    "smoke": "completed",
+    "cancel": "passed"
+  },
+  "uninstall": {
+    "application_removed": true,
+    "status": "passed",
+    "personal_data_preserved": true,
+    "exit_code": 0
+  },
+  "offline_payload": true,
+  "webview2_runtime_preinstalled": true,
+  "signing": "unsigned",
+  "cusolvermg_included": false,
+  "raw_evidence_directory": "reports/installer/20261027-093954-463/installation-20261027-100644-302",
+  "reference_checkpoint_unchanged": true
+}

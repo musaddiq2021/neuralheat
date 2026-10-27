@@ -3,6 +3,7 @@ param(
     [string]$SourceExecutable,
     [string]$SourceVerificationDirectory,
     [string]$WebView2Installer,
+    [switch]$AllowPendingDesktopVerification,
     [switch]$BuildOnly
 )
 
@@ -47,7 +48,11 @@ try {
     if (-not $SourceVerificationDirectory) { throw 'Pass -SourceVerificationDirectory with a custom -SourceExecutable.' }
     $SourceExecutable = (Resolve-Path -LiteralPath $SourceExecutable).Path
     $sourceRoot = Split-Path -Parent $SourceExecutable
-    foreach ($name in @('packaged-cpu','packaged-webview-cuda-worker')) {
+    # A candidate may be compiled from passing backend tests when this executor
+    # cannot create WebView2. Actual installed GUI verification remains mandatory
+    # in installer_release.py before anything is reported verified/upload-ready.
+    $requiredSourceTests = if ($AllowPendingDesktopVerification) { @('packaged-cpu','packaged-cuda-worker') } else { @('packaged-cpu','packaged-webview-cuda-worker') }
+    foreach ($name in $requiredSourceTests) {
         $check = Get-Content -LiteralPath (Join-Path $SourceVerificationDirectory "$name.json") -Raw | ConvertFrom-Json
         if ($check.status -ne 'passed' -or -not $check.frozen -or -not $check.backend_port_closed) {
             throw "The source release has no passing frozen $name verification."
@@ -82,6 +87,7 @@ try {
         webview2_installer=$WebView2Installer; report_directory=$reportRoot
         installer_script_sha256=(Get-FileHash -LiteralPath 'desktop\installer\NeuralHeatStudio.iss' -Algorithm SHA256).Hash.ToLowerInvariant()
         status='prepared'; version=$version
+        source_desktop_verification_pending=[bool]$AllowPendingDesktopVerification
     }
     $candidateFile = Join-Path $reportRoot 'candidate.json'
     $candidate | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $candidateFile -Encoding UTF8

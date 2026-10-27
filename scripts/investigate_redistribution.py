@@ -10,7 +10,7 @@ import ast
 import hashlib
 import json
 import shutil
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pefile
@@ -36,7 +36,9 @@ def pe_dependencies(path: Path) -> dict:
             ]
         )
         return {
-            kind: [entry.dll.decode("ascii", errors="replace") for entry in getattr(image, field, [])]
+            kind: [
+                entry.dll.decode("ascii", errors="replace") for entry in getattr(image, field, [])
+            ]
             for kind, field in (
                 ("imports", "DIRECTORY_ENTRY_IMPORT"),
                 ("delay_imports", "DIRECTORY_ENTRY_DELAY_IMPORT"),
@@ -118,7 +120,9 @@ def investigate(root: Path, source: Path, toc: Path, output: Path, experiment: P
             original_hash = digest(path)
             if digest(target_path) != original_hash:
                 raise RuntimeError(f"Experimental copy differs: {name}")
-            copied.append({"path": name.as_posix(), "sha256": original_hash, "bytes": path.stat().st_size})
+            copied.append(
+                {"path": name.as_posix(), "sha256": original_hash, "bytes": path.stat().st_size}
+            )
         if omitted != [f"_internal/torch/lib/{TARGET}"]:
             raise AssertionError(f"Unexpected omission set: {omitted}")
         result["experiment"] = {
@@ -144,9 +148,19 @@ if __name__ == "__main__":
     args = parser.parse_args()
     latest = json.loads((root / "dist/desktop/latest.json").read_text(encoding="utf-8-sig"))
     source = args.source or Path(latest["executable"]).parent
-    toc = args.toc or root / "build/desktop" / latest["build_id"] / "pyinstaller/NeuralHeat Studio/COLLECT-00.toc"
-    run_id = datetime.now(UTC).strftime("%Y%m%d-%H%M%S-%f")
+    toc = (
+        args.toc
+        or root
+        / "build/desktop"
+        / latest["build_id"]
+        / "pyinstaller/NeuralHeat Studio/COLLECT-00.toc"
+    )
+    run_id = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S-%f")
     output = args.output or root / "reports/redistribution" / run_id
-    experiment = root / "dist/experiments" / run_id / "NeuralHeat Studio" if args.create_experiment else None
+    experiment = (
+        root / "dist/experiments" / run_id / "NeuralHeat Studio" if args.create_experiment else None
+    )
     result = investigate(root, source, toc, output, experiment)
-    print(json.dumps({key: value for key, value in result.items() if key != "provenance"}, indent=2))
+    print(
+        json.dumps({key: value for key, value in result.items() if key != "provenance"}, indent=2)
+    )

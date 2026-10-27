@@ -45,11 +45,11 @@ The opening Overview presents saved training-loss and batch-one latency charts, 
 
 The payload includes the checkpoint, datasets, numerical engine, interface and PyTorch CPU/CUDA libraries. Setup makes no downloads. **Microsoft Edge WebView2 Runtime must already be installed** for this release; Microsoft's full Evergreen Standalone Installer can supply it offline. Windows 10 1809+ / Windows 11 x64 is required. CUDA additionally requires a compatible NVIDIA driver; the CUDA Toolkit is unnecessary. CPU fallback is included.
 
-The prepared installer is **1,863,668,204 bytes: 1.864 GB / 1.736 GiB**. It is unsigned, so Windows may show an unrecognized-publisher prompt. The maintainer has confirmed successful Windows installation and verification; the publication checklist distinguishes that confirmation from older restricted-executor logs.
+The verified **v1.0.0-beta.1** installer is **1,813,363,530 bytes: 1.813 GB / 1.689 GiB**. It is unsigned, so Windows may show an unrecognized-publisher prompt. Actual Program Files installation, CPU/CUDA, training/cancellation, all four native workspaces, resizing, shortcuts and uninstall preservation passed; see the [verification record](docs/verification/windows-beta.json).
 
 Runs, logs, caches, WebView2 profile and settings live in `%LOCALAPPDATA%\NeuralHeat Studio`. Uninstalling preserves personal data. The supplied checkpoint and historical reports stay separate from new experiments. The internal backend uses an available loopback port and stops with the window.
 
-See [installer instructions](docs/INSTALLER.md), [desktop architecture](docs/DESKTOP.md) and the [publication checklist](docs/PUBLICATION.md). Release assets are prepared locally; they have not been uploaded automatically.
+See [installer instructions](docs/INSTALLER.md), [desktop architecture](docs/DESKTOP.md), [source/installer correspondence](docs/verification/release-source.json) and the [publication record](docs/PUBLICATION.md). Distribute the verified package through this repository's GitHub Releases together with its checksums and redistributable notices/source archive.
 
 ## Scientific results
 
@@ -180,6 +180,6 @@ Desktop and installer build commands are in [DESKTOP.md](docs/DESKTOP.md) and [I
 
 NeuralHeat's own source is [MIT licensed](LICENSE). Dependencies retain their licenses; see [third-party notices and redistribution review](THIRD_PARTY_NOTICES.md) and the [retained license texts](docs/licenses/). NVIDIA and Microsoft runtimes are not relicensed under MIT.
 
-The Windows build is verified, but public binary publication remains pending the specific MSVC entitlement/provenance and cuSOLVER Mg redistribution evidence in that review. Added notices and corresponding certifi source must accompany the installer. The original verified installer has been preserved.
+The original build is preserved. The [MSVC review](docs/MSVC_REDISTRIBUTION.md) records the accepted Community licence, archived full terms and exact official provenance for all four runtime DLLs. The unused cuSOLVERMg component is excluded through a guarded collection policy, while the verified beta retains working CPU/CUDA functionality. Complete notices and corresponding certifi source are included in the installer and release materials. The [beta release procedure](docs/BETA_RELEASE.md) documents reproduction; no licence or installation-verification issue remains open for this payload.
 
 Publish the installer, reference checkpoint, checksums and accompanying notices as **GitHub Release assets**. Multi-gigabyte ZIPs, datasets, environments and build trees do not belong in Git. The [publication checklist](docs/PUBLICATION.md) records readiness and outstanding obligations.

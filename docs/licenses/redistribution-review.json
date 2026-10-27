@@ -1,7 +1,6 @@
 {
-  "reviewed": "2026-10-22",
-  "scope": "Existing verified Windows payload; no rebuilding or binary modification",
-  "installer_sha256": "861038b7f183f936db1a545d20d148c113fc31c00ae62ba1a00a043a0b8e64a9",
+  "reviewed": "2026-10-27",
+  "scope": "Documented unchanged MSVC binaries and Mg-free Windows beta candidate; original payload and installer preserved",
   "frontend": "Full retained runtime license closure supplied in the mandatory notice attachment",
   "openssl": "3.0.16: full Apache-2.0, attribution and upstream AUTHORS retained",
   "webview2_sdk": "1.0.3856.49: exact NuGet license verified as BSD-style; full notice retained",
@@ -11,30 +10,94 @@
     "cudnn": "9.19.0 exact-version agreement, supplement and acknowledgements retained",
     "application_conditions": "BINARY_DISTRIBUTION_TERMS.txt; separate proprietary runtime terms from MIT application source",
     "mapping": "CUDA Attachment A covers the runtime, BLAS/Lt, FFT/w, random, sparse, solver, NVRTC/builtins, JIT-link and NVTX families; cuDNN supplement explicitly permits runtime DLLs",
-    "limitation": "cuSOLVER Mg variant is present but is not explicitly named in Attachment A; matching package-specific redistribution evidence is still required"
+    "limitation": "Earlier restricted WebView2 failures remain historical evidence; all native pages and resize now pass on the actually installed identical payload in normal Windows.",
+    "actual_target": "cusolverMg64_11.dll",
+    "status": "resolved_by_omission_and_verified_in_installed_application",
+    "experimental_removal": "Controlled exclusion and fresh PyInstaller candidate passed CPU/CUDA inference, activations, solver checks, smoke training and benchmarks without Mg; no fallback libraries observed",
+    "experiment_summary": "docs/licenses/cusolvermg-experiment.json",
+    "vendor_permission_route": "No Mg redistribution grant is needed for the verified-absent component. The original retained-Mg installer is preserved and is not the beta upload candidate.",
+    "distribution_basis": "Entire unused Mg component omitted; ordinary CUDA/cuDNN components and their agreements/notices retained",
+    "production_policy": "desktop/freeze_policy.py; equivalent to the tested isolated exclusion, guarded for the known CUDA wheel and PE imports"
   },
   "msvc": {
-    "detected_ide_or_build_tools": null,
-    "detection": "No vswhere, setup instance registry entries, ProgramData instance directory or standard Visual Studio installation folders found; uninstall registry contains VS Code and VC++ redistributables only",
-    "runtime_versions": ["14.51.36247.0", "14.40.33810.0"],
+    "detected_ide_or_build_tools": {
+      "instanceId": "b7bb7172",
+      "displayName": "Visual Studio Community 2026",
+      "productId": "Microsoft.VisualStudio.Product.Community",
+      "installationPath": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community",
+      "installationVersion": "18.11.12315.225",
+      "installDate": "2026-10-22T12:24:14Z",
+      "isComplete": true,
+      "isLaunchable": true,
+      "isPrerelease": false,
+      "isRebootRequired": false,
+      "channelId": "VisualStudio.18.Release",
+      "display_version": "18.11.1",
+      "selected_cpp_components": [
+        {
+          "id": "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+          "version": "18.11.12301.404",
+          "type": "Component",
+          "selectedState": "GroupSelected",
+          "userSelectedState": "Implicit"
+        },
+        {
+          "id": "Microsoft.VisualStudio.Component.VC.Redist.14.Latest",
+          "version": "18.11.12301.404",
+          "type": "Component",
+          "selectedState": "GroupSelected",
+          "userSelectedState": "Implicit"
+        },
+        {
+          "id": "Microsoft.VisualStudio.Workload.NativeDesktop",
+          "version": "18.9.11915.232",
+          "type": "Workload",
+          "productArch": "x64",
+          "selectedState": "GroupSelected",
+          "userSelectedState": "Explicit"
+        }
+      ],
+      "setup_catalog_license_url": "https://go.microsoft.com/fwlink/?LinkId=2327616",
+      "evidence_collected_at": "2026-10-23T10:30:12.5871828Z"
+    },
+    "detection": "vswhere release instance b7bb7172; selected NativeDesktop, VC.Tools.x86.x64 and VC.Redist.14.Latest verified in setup state.",
+    "runtime_versions": [
+      "14.51.36247.0",
+      "14.40.33810.0"
+    ],
     "signatures": "All four discovered MSVC DLLs have valid Microsoft Authenticode signatures; exact hashes retained in msvc-binaries.json",
     "redist_rule": "2026 REDIST list allows unmodified files under licensed Visual Studio VC/redist, excluding debug_nonredist; the rule is directory-based, not a DLL filename whitelist",
-    "numpy_variant": "NumPy's hash-suffixed msvcp140 DLL has OriginalFilename msvcp140.dll, valid signature and SHA256 beginning with its filename hash; bytes were not edited here",
+    "numpy_variant": "Exact SHA256 match to msvcp140.dll_amd64 extracted from the official signed 14.40.33810 package; existing hash-renamed wheel/frozen file preserved.",
     "eligible_use": "Maintainer describes an independently developed personal MIT open-source project; Microsoft's Community individual-developer guidance fits that use",
-    "entitlement": "Eligibility is distinct from having a validly licensed copy and accepting its terms; links and runtime installations alone do not establish this",
-    "maintainer_confirmation": "Maintainer says an applicable license/terms can be provided; no installed edition or accepted license evidence identified yet",
+    "entitlement": "Community 2026 installation and publisher-confirmed acceptance now recorded; individual personal-project usage route applies to the stated facts.",
+    "maintainer_confirmation": "Visual Studio Community 2026 is now installed, including the Desktop development with C++ workload. I accepted the Microsoft licence terms during installation.",
     "sources": [
       "https://visualstudio.microsoft.com/license-terms/",
       "https://visualstudio.microsoft.com/license-terms/vs2026-ga-community/",
       "https://learn.microsoft.com/en-us/visualstudio/releases/2026/redistribution",
       "https://learn.microsoft.com/en-us/cpp/windows/redistributing-visual-cpp-files",
       "https://visualstudio.microsoft.com/vs/community/"
-    ]
+    ],
+    "status": "resolved_for_documented_unchanged_runtime_payload",
+    "actual_provenance": "Original TOCs and matching hashes establish three DLLs came from System32 and the fourth from the NumPy 2.5.4 wheel; wheel RECORD matches",
+    "instructions": "docs/MSVC_REDISTRIBUTION.md",
+    "collector": "scripts/collect_msvc_evidence.ps1",
+    "license_acceptance_by_agent": false,
+    "acceptance_confirmed_on": "2026-10-23",
+    "exact_licensed_redist_matches": 3,
+    "unmatched_runtime": "_internal/numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+    "licensed_redist_directory": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Redist\\MSVC\\14.51.36231\\x64\\Microsoft.VC145.CRT",
+    "terms_document_reviewed": true,
+    "provenance_record": "docs/licenses/msvc-provenance.json",
+    "exact_official_runtime_package_matches": 1,
+    "distribution_basis": "Accepted Community licence Distributable Code grant plus 2026 REDIST licensed-user provision for separately downloaded runtime binaries. The standalone installation/use EULA is retained and is not treated as a redistribution grant.",
+    "downstream_terms": "BINARY_DISTRIBUTION_TERMS.txt; final installer licence page and accompanying complete notices"
   },
-  "outstanding": [
-    "Identify the publisher's validly licensed Visual Studio/Build Tools edition and accepted applicable terms; establish unmodified DLL provenance against its REDIST grant, including NumPy's 14.40 hash-named copy",
-    "Retain package-specific NVIDIA redistribution evidence for the cuSOLVER Mg DLL variant, which the generic CUDA Attachment A does not explicitly name",
-    "Publish and deliver the unchanged installer together with the mandatory complete notice attachment and certifi covered source; installer alone is not notice-complete"
-  ],
-  "binary_publication_ready": false
+  "outstanding": [],
+  "binary_publication_ready": true,
+  "original_installer_sha256": "861038b7f183f936db1a545d20d148c113fc31c00ae62ba1a00a043a0b8e64a9",
+  "candidate_installer": "dist/installer/20261027-093954-463/NeuralHeat-Studio-Setup.exe",
+  "installer_sha256": "ecf3f57dcc2f8b50144c42e505559f71550d1f75466c3734aab16ec78d69171f",
+  "installer_bytes": 1813363530,
+  "installed_verification": "docs/verification/windows-beta.json"
 }

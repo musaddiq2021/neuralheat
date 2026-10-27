@@ -36,7 +36,11 @@ OutputBaseFilename=NeuralHeat-Studio-Setup
 SetupIconFile={#SourceDir}\_internal\scientific_assets\desktop\neuralheat.ico
 UninstallDisplayIcon={app}\NeuralHeat Studio.exe
 UninstallDisplayName=NeuralHeat Studio
+#if FileExists(SourceDir + "\INSTALLATION-LICENCE.txt")
+LicenseFile={#SourceDir}\INSTALLATION-LICENCE.txt
+#else
 LicenseFile={#SourceDir}\LICENSE.txt
+#endif
 InfoBeforeFile={#ArtworkDir}\installation-notes.txt
 #if VER >= EncodeVer(6, 6, 0)
 WizardStyle=modern dark

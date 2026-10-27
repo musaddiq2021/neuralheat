@@ -165,6 +165,17 @@ try {
     & $pythonExe scripts/installer_release.py report --candidate $CandidateFile --evidence $evidenceFile --output $reportRoot
     $verificationCode = $LASTEXITCODE
     $result = Get-Content -LiteralPath (Join-Path $reportRoot 'installer.json') -Raw | ConvertFrom-Json
+    if ($verificationCode -eq 0 -and $result.status -eq 'verified') {
+        $candidate.status = 'verified'
+        $candidate | Add-Member -NotePropertyName verified_report_directory -NotePropertyValue $reportRoot -Force
+        $candidate | Add-Member -NotePropertyName source_desktop_verification_pending -NotePropertyValue $false -Force
+        $candidate | Add-Member -NotePropertyName desktop_verification_basis -NotePropertyValue 'Actual installed WebView2 pages passed; installed/source payload hashes match. Earlier restricted source-window failures remain in their original reports.' -Force
+        $candidate | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $CandidateFile -Encoding UTF8
+        $activeCandidate = Join-Path $projectRoot 'reports\installer\candidate.json'
+        if ((Get-Content -LiteralPath $activeCandidate -Raw | ConvertFrom-Json).build_id -eq $candidate.build_id) {
+            $candidate | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $activeCandidate -Encoding UTF8
+        }
+    }
     $latest = @{installer=$candidate.installer;report_directory=$reportRoot;status=$result.status;candidate_file=$CandidateFile}
     $latest | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $projectRoot 'reports\installer\latest.json') -Encoding UTF8
     Copy-Item -LiteralPath (Join-Path $reportRoot 'installer.json') -Destination (Join-Path (Split-Path -Parent $candidate.installer) 'installer.json')

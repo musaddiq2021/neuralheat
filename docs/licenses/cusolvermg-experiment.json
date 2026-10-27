@@ -1,0 +1,307 @@
+{
+  "reviewed": "2026-10-27",
+  "status": "resolved_exclusion_adopted_installer_verified",
+  "target": "cusolverMg64_11.dll",
+  "target_bytes": 157071360,
+  "target_sha256": "c3377f10606ff0606be2f08401d54aff6c37f137b78d6b6e21be356a5b4d6cc2",
+  "torch": "2.11.0+cu128",
+  "wheel_record_verified": true,
+  "pe_files_inspected": 111,
+  "static_or_delay_importers": [],
+  "original_torch_import_loads_mg": true,
+  "controlled_exclusion": {
+    "relative_path": "dist/experiments/20261022-114145-389073/NeuralHeat Studio",
+    "retained_files_byte_identical": 2798,
+    "bytes": 4336493930,
+    "tests": [
+      {
+        "name": "packaged-cpu",
+        "passed": true,
+        "exit_code": 0,
+        "device": "cpu",
+        "frozen": true,
+        "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+        "scientific_assets_verified": 68,
+        "backend_checks": [
+          "offline static UI",
+          "session cookie",
+          "saved report unchanged",
+          "solver agreement",
+          "inference",
+          "real activations",
+          "saved logs",
+          "idle on launch"
+        ],
+        "worker": null,
+        "cusolvermg_loaded": false,
+        "candidate_cuda_images_observed": [
+          "cudart64_12.dll",
+          "cudnn64_9.dll",
+          "cusolver64_11.dll",
+          "torch_cuda.dll"
+        ],
+        "no_original_or_venv_fallback": true,
+        "backend_port_closed": true,
+        "ui": null,
+        "error": null
+      },
+      {
+        "name": "packaged-cuda-worker",
+        "passed": true,
+        "exit_code": 0,
+        "device": "cuda",
+        "frozen": true,
+        "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+        "scientific_assets_verified": 68,
+        "backend_checks": [
+          "offline static UI",
+          "session cookie",
+          "saved report unchanged",
+          "solver agreement",
+          "inference",
+          "real activations",
+          "saved logs",
+          "idle on launch"
+        ],
+        "worker": {
+          "smoke": "completed",
+          "cancel": "passed",
+          "run": "runs\\studio\\20261022T114429-6fbc17c1"
+        },
+        "cusolvermg_loaded": false,
+        "candidate_cuda_images_observed": [
+          "cudart64_12.dll",
+          "cudnn64_9.dll",
+          "cusolver64_11.dll",
+          "torch_cuda.dll"
+        ],
+        "no_original_or_venv_fallback": true,
+        "backend_port_closed": true,
+        "ui": null,
+        "error": null
+      },
+      {
+        "name": "packaged-webview-cuda-worker",
+        "passed": false,
+        "exit_code": 1,
+        "device": "cuda",
+        "frozen": true,
+        "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+        "scientific_assets_verified": 68,
+        "backend_checks": [
+          "offline static UI",
+          "session cookie",
+          "saved report unchanged",
+          "solver agreement",
+          "inference",
+          "real activations",
+          "saved logs",
+          "idle on launch"
+        ],
+        "worker": {
+          "smoke": "completed",
+          "cancel": "passed",
+          "run": "runs\\studio\\20261022T114505-406efc46"
+        },
+        "cusolvermg_loaded": false,
+        "candidate_cuda_images_observed": [
+          "cudart64_12.dll",
+          "cudnn64_9.dll",
+          "cusolver64_11.dll",
+          "torch_cuda.dll"
+        ],
+        "no_original_or_venv_fallback": true,
+        "backend_port_closed": true,
+        "ui": null,
+        "error": "Main window failed to start"
+      }
+    ]
+  },
+  "fresh_pyinstaller": {
+    "relative_path": "dist/experiments/no-cusolvermg-20261022-125001-723/NeuralHeat Studio",
+    "freeze_completed": true,
+    "tests": [
+      {
+        "name": "packaged-cpu",
+        "passed": true,
+        "exit_code": 0,
+        "device": "cpu",
+        "frozen": true,
+        "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+        "scientific_assets_verified": 68,
+        "backend_checks": [
+          "offline static UI",
+          "session cookie",
+          "saved report unchanged",
+          "solver agreement",
+          "inference",
+          "real activations",
+          "saved logs",
+          "idle on launch"
+        ],
+        "worker": null,
+        "cusolvermg_loaded": false,
+        "candidate_cuda_images_observed": [
+          "cudart64_12.dll",
+          "cudnn64_9.dll",
+          "cusolver64_11.dll",
+          "torch_cuda.dll"
+        ],
+        "no_original_or_venv_fallback": true,
+        "backend_port_closed": true,
+        "ui": null,
+        "error": null
+      },
+      {
+        "name": "packaged-cuda-worker",
+        "passed": true,
+        "exit_code": 0,
+        "device": "cuda",
+        "frozen": true,
+        "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+        "scientific_assets_verified": 68,
+        "backend_checks": [
+          "offline static UI",
+          "session cookie",
+          "saved report unchanged",
+          "solver agreement",
+          "inference",
+          "real activations",
+          "saved logs",
+          "idle on launch"
+        ],
+        "worker": {
+          "smoke": "completed",
+          "cancel": "passed",
+          "run": "runs\\studio\\20261022T115552-f6308b29"
+        },
+        "cusolvermg_loaded": false,
+        "candidate_cuda_images_observed": [
+          "cudart64_12.dll",
+          "cudnn64_9.dll",
+          "cusolver64_11.dll",
+          "torch_cuda.dll"
+        ],
+        "no_original_or_venv_fallback": true,
+        "backend_port_closed": true,
+        "ui": null,
+        "error": null
+      },
+      {
+        "name": "packaged-webview-cuda-worker",
+        "passed": false,
+        "exit_code": 1,
+        "device": "cuda",
+        "frozen": true,
+        "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+        "scientific_assets_verified": 68,
+        "backend_checks": [
+          "offline static UI",
+          "session cookie",
+          "saved report unchanged",
+          "solver agreement",
+          "inference",
+          "real activations",
+          "saved logs",
+          "idle on launch"
+        ],
+        "worker": {
+          "smoke": "completed",
+          "cancel": "passed",
+          "run": "runs\\studio\\20261022T115634-7bd0978e"
+        },
+        "cusolvermg_loaded": false,
+        "candidate_cuda_images_observed": [
+          "cudart64_12.dll",
+          "cudnn64_9.dll",
+          "cusolver64_11.dll",
+          "torch_cuda.dll"
+        ],
+        "no_original_or_venv_fallback": true,
+        "backend_port_closed": true,
+        "ui": null,
+        "error": "Main window failed to start"
+      }
+    ],
+    "file_count": 2798,
+    "uncompressed_bytes": 4336493930,
+    "exe_sha256": "3401c4897fea4fbfd9e4a71ba5d67371f3288dabbcb7745f822840715262bd0b"
+  },
+  "unchanged_original_ui_control": {
+    "device": "cuda",
+    "frozen": true,
+    "error": "Main window failed to start",
+    "backend_checks": [
+      "offline static UI",
+      "session cookie",
+      "saved report unchanged",
+      "solver agreement",
+      "inference",
+      "real activations",
+      "saved logs",
+      "idle on launch"
+    ],
+    "backend_port_closed": true
+  },
+  "webview2_controller_hresult": "0x8000FFFF in original and candidate controls",
+  "desktop_installation_test": "not_run_for_exclusion_candidate; runtime UI gate failed before installer compilation",
+  "production_spec_promoted": false,
+  "original_installer_rebuilt": false,
+  "published": false,
+  "external_runtime_report_received": false,
+  "reference_results_modified": false,
+  "verified_smoke_training": {
+    "completed_runs": 4,
+    "epochs_each": 3,
+    "recorded_device": "cuda",
+    "all_five_benchmark_method_groups_present": true
+  },
+  "beta_verification": {
+    "report_directory": "reports/redistribution/release-beta-20261027-090635-937/runtime",
+    "tests": [
+      {
+        "name": "packaged-cpu",
+        "passed": true,
+        "device": "cpu",
+        "cusolvermg_loaded": false,
+        "no_original_or_venv_fallback": true,
+        "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+        "asset_hashes_verified": 68,
+        "backend_port_closed": true,
+        "error": null
+      },
+      {
+        "name": "packaged-cuda-worker",
+        "passed": true,
+        "device": "cuda",
+        "cusolvermg_loaded": false,
+        "no_original_or_venv_fallback": true,
+        "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+        "asset_hashes_verified": 68,
+        "backend_port_closed": true,
+        "error": null
+      },
+      {
+        "name": "packaged-webview-cuda-worker",
+        "passed": false,
+        "device": "cuda",
+        "cusolvermg_loaded": false,
+        "no_original_or_venv_fallback": true,
+        "checkpoint_sha256": "d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2",
+        "asset_hashes_verified": 68,
+        "backend_port_closed": true,
+        "error": "Main window failed to start"
+      }
+    ]
+  },
+  "installed_beta_verification": {
+    "record": "docs/verification/windows-beta.json",
+    "status": "verified",
+    "installer_sha256": "ecf3f57dcc2f8b50144c42e505559f71550d1f75466c3734aab16ec78d69171f",
+    "all_checks_passed": true,
+    "ordinary_cuda_retained": true,
+    "cusolvermg_included": false,
+    "production_policy_adopted": true,
+    "original_build_preserved": true
+  }
+}

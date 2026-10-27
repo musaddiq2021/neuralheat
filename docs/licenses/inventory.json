@@ -261,9 +261,5 @@
     "archive_sha256": "09ce63e5441a41d6ffae309f5c3db584605ef5db5f45d9d395ae9d5801d3eeee",
     "archive_verified": true
   },
-  "binary_release_review_required": [
-    "Identify the publisher's validly licensed Visual Studio/Build Tools edition and accepted applicable terms; establish unmodified DLL provenance against its REDIST grant, including NumPy's 14.40 hash-named copy",
-    "Retain package-specific NVIDIA redistribution evidence for the cuSOLVER Mg DLL variant, which the generic CUDA Attachment A does not explicitly name",
-    "Publish and deliver the unchanged installer together with the mandatory complete notice attachment and certifi covered source; installer alone is not notice-complete"
-  ]
+  "binary_release_review_required": []
 }

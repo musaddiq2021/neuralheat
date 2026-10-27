@@ -1,80 +1,83 @@
-# First public GitHub release
+# NeuralHeat Studio v1.0.0-beta.1 publication record
 
-Publication preparation changes documentation, ignore rules, CI metadata and additive audit/capture/notice tools. It does not rebuild the software, run a new scientific experiment, remove local files or push anything.
+**Approved for publication, 27 October 2026.** The Mg-free installer passed actual Windows Program Files installation and all installed-application checks. Microsoft licence/provenance review is complete. Original builds, checkpoint, scientific reports and UI are preserved. The [source correspondence record](verification/release-source.json) confirms byte-identical application Python and matching compiled UI/scientific assets. Packaging/licence/publication materials were finalised after freezing without rebuilding the application.
 
 ## Source repository
 
-There is no project `.git` directory or enclosing Git repository in the inspected workspace. Consequently there are **no tracked files or Git history to inspect**. The audit does not initialize the project or stage files. It creates a disposable Git metadata directory under ignored `.cache/` solely to evaluate the actual ignore rules. If a repository/history is later added, rerun the audit; it also checks tracked-but-ignored paths and historical blobs.
-
-The prospective source tree is small: approximately **3.3 MiB with screenshots and retained notices**, including complete retained license texts. Exact current counts, sizes, candidate paths, hashes, secret-pattern findings and ignore checks are in local `.cache/publication-audit/audit.json`. Run:
+The source tree is approximately **3.6 MiB**, including real screenshots, source, tests, packaging tools and retained licences. The publication audit checks prospective files, tracked-but-ignored paths, credentials, large files, documentation links and Git history. It found no credential matches, personal-path findings, tracked ignored files or blobs above the configured size threshold. Exact current counts are in ignored `.cache/publication-audit/audit.json`.
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/audit_publication.py
 ```
 
-The initial candidate scan found no credential-pattern matches and no files above 5 MiB. One maintainer-specific Windows path in installer documentation was replaced by `%LOCALAPPDATA%`. Keep upstream copyright-holder names and license notices; they are attribution, not leaked project credentials. Pattern scanning covers prospective text files and tracked history, not every possible secret encoding or all ignored environments.
+Environments, node_modules, build/dist trees, datasets, caches, checkpoint binaries, runtime logs, raw test runs and application archives/installers stay outside Git. Curated scientific JSON/CSV/Markdown and figures remain in source; the reference checkpoint is a separate release asset. No Git LFS is needed. Source audit success does not replace application tests or legal review.
 
-Ready-to-commit material includes:
+## Actual Windows verification
 
-- `src/`, `tests/`, `configs/`, existing build/CLI scripts and the complete React source.
-- `desktop/` packaging definitions, icon resources, `pyproject.toml`, npm manifests and `package-lock.json`.
-- `.gitignore`, CI workflows, MIT `LICENSE`, README and technical documentation.
-- Curated `reports/benchmark.json`, `.csv`, `.md`, `evaluation.json`, `models/training.json` and the three scientific PNGs.
-- Four inspected actual interface screenshots and lossless compression provenance; retained `docs/licenses/` and third-party review.
+The [public verification record](verification/windows-beta.json) summarizes the real elevated-Windows run. Its raw evidence remains under `reports/installer/20261027-093954-463/installation-20261027-100644-302/`.
 
-Ignored and preserved locally: `.venv`, caches, `node_modules`, `dist`, `build`, datasets, checkpoint binaries, runs, archives, EXEs/installers, signing keys, environment files and non-curated machine/build reports. No Git LFS is required for the proposed source tree. Ignoring a path does not remove it from an existing Git index; the auditor reports that situation rather than silently changing history.
+- All **2,801 application files** match the source payload before and after execution.
+- Installed CPU operation and automatic CUDA selection pass on the RTX 4070 Laptop GPU.
+- Approved smoke training and cancellation pass in isolated AppData; original scientific outputs and the reference checkpoint remain unchanged.
+- Physics, Network Explorer, Training Control Room, Latency Lab and native resizing pass through the actual WebView2 window.
+- Program Files installation, uninstall registration, Start Menu/desktop shortcuts and AppData storage pass.
+- Uninstall removes the test installation and preserves personal data.
+- **62 Python tests**, Ruff, PowerShell syntax checks and guarded collection equivalence checks pass.
 
-## Windows verification provenance
+Earlier restricted WebView2/controller and Start Menu/registry failures remain historical evidence, not rewritten passing reports. The [original maintainer attestation](verification/windows-release.md) concerns the older build; this beta has its own actual installer evidence.
 
-The maintainer reports that Windows installation and application verification now pass. The saved original portable-release CPU/CUDA/WebView2 tests also pass. The local installer test report under `reports/installer/latest.json` still points to the earlier restricted-executor failure: it unpacked all 2,799 application files, could not write Start Menu/uninstall-registry entries (Windows error 5), and rolled back. That historical report has not been rewritten to claim a passing test.
+## Upload assets
 
-The [dated maintainer confirmation](verification/windows-release.md) records successful Windows verification without inventing individual automated outcomes. Detailed normal-Windows output can also be archived with the release when available. This does not require a rebuild. The installer and original model/report hashes are preserved. Maintainer confirmation is distinct from a fresh automated test performed during source preparation.
+Prepared folder: `D:\neuralheat\dist\releases\v1.0.0-beta.1`.
 
-## Release assets, separate from Git
+| Asset | Bytes |
+|---|---:|
+| `NeuralHeat-Studio-Setup.exe` | 1,813,363,530 |
+| `best.pt` | 385,883 |
+| `NeuralHeat-Studio-Third-Party-Notices.txt` | 1,515,191 |
+| `NeuralHeat-Studio-Certifi-2026.4.22-Source.zip` | 139,214 |
+| `SHA256SUMS.txt` | generated text manifest |
 
-| Asset | Existing local location | Bytes |
-|---|---|---:|
-| Full Windows installer | `dist/installer/20261022-102027-253/NeuralHeat-Studio-Setup.exe` | 1,863,668,204 |
-| Reference CNN checkpoint copy | `dist/release-support/best.pt` | 385,883 |
-| Added third-party notice attachment | `dist/release-support/NeuralHeat-Studio-Third-Party-Notices.txt` | see generated asset manifest |
-| Matching certifi covered source | `dist/release-support/NeuralHeat-Studio-Certifi-2026.4.22-Source.zip` | see generated asset manifest |
-| Checksum manifest | `dist/release-support/SHA256SUMS.txt` | small text |
-
-The notice/source attachments are additive and mandatory accompanying release materials. Their current exact sizes and hashes are in local `dist/release-support/release-assets.json` and `SHA256SUMS.txt`. The installer, original checkpoint, original portable folder and scientific evidence are not modified. The old 2.886 GB ZIP is excluded and exceeds the release-asset limit; publish the smaller setup EXE instead. Release assets are prepared, not uploaded. Use [release note draft](RELEASE_NOTES.md) only after resolving the remaining binary obligations.
+The installer is **1.813 GB / 1.689 GiB**, below the GitHub asset limit and the 1.9 GiB target. Its complete application tree is 4,338,077,017 bytes. Setup makes no downloads and includes the checkpoint, matching datasets, interface and CPU/CUDA runtimes. WebView2 and a compatible NVIDIA driver for CUDA remain system prerequisites. Signing is not configured; an unsigned-publisher/SmartScreen prompt is a documented beta limitation, not an unresolved redistribution question.
 
 Installer SHA256:
 
 ```text
-861038b7f183f936db1a545d20d148c113fc31c00ae62ba1a00a043a0b8e64a9
+ecf3f57dcc2f8b50144c42e505559f71550d1f75466c3734aab16ec78d69171f
 ```
 
-Checkpoint SHA256:
+Reference checkpoint SHA256:
 
 ```text
 d5e2d5a88c8666101279d696f04aa32c53159399938de126642e3e745c4429d2
 ```
 
-## Remaining publication checks
+The old retained-Mg installer stays at `dist/installer/20261022-102027-253/NeuralHeat-Studio-Setup.exe`, unchanged SHA256 `861038b7f183f936db1a545d20d148c113fc31c00ae62ba1a00a043a0b8e64a9`. It is not the beta upload asset. The large older application ZIP remains local.
 
-1. Screenshot integration is complete for the available captures, as approved by the maintainer: Overview, Physics, Network Explorer and native startup. [Manual provenance](screenshots/provenance.json) records dimensions, hashes and pixel-identical compression. Training/Latency page captures were not supplied; there are no placeholder references. These are manual captures, not an automated checkpoint/API test record.
-2. [Third-party review](../THIRD_PARTY_NOTICES.md) now includes full frontend, exact WebView2 SDK, OpenSSL and NVIDIA notices plus matching certifi covered source. Remaining binary gates: establish the publisher's actual licensed Visual Studio/Build Tools edition and runtime provenance (including NumPy's older renamed DLL), obtain matching redistribution evidence for cuSOLVER Mg, and deliver the accompanying notices/source with the installer. No registered IDE/Build Tools installation was detected locally. Individual Community eligibility and source audit success do not establish binary entitlement.
-3. Include the dated maintainer verification note; optionally archive detailed normal-Windows test output. The older restricted report remains private and unchanged.
-4. Decide the public repository URL and release tag, initialize Git when ready, review `git status` / staged changes, and enable GitHub secret scanning/push protection where available. No repository, commit, remote, tag or push has been created automatically.
+## Licence and packaging disposition
 
-Code signing is not configured; the current installer is unsigned. WebView2 is an external prerequisite and a compatible NVIDIA driver is required for CUDA. Python dependencies use compatibility ranges; the recorded scientific environment is evidence rather than a universally reproducible package lock. CI workflow changes have been checked locally but GitHub Actions itself has not run in this workspace.
+The [third-party review](../THIRD_PARTY_NOTICES.md) records the accepted Community licence, full archived documents and exact official provenance for all four MSVC DLLs. NumPy's hash-named file was not replaced: it exactly matches the signed official 14.40 runtime package. Redistribution relies on the licensed Visual Studio grant, not the runtime installation EULA alone.
 
-## Commit review when the remaining checks are complete
+The beta omits the entire unused Mg component through the [guarded policy](../desktop/freeze_policy.py). Ordinary CUDA/cuDNN and their notices remain. The policy matches the tested exclusion and refuses unsafe imports or an unreviewed CUDA-wheel exclusion. No Mg vendor permission is needed for a component not distributed. Full notices, protective installation terms and matching certifi source are inside the installer and accompany the release; keep them with redistribution.
 
-These are manual instructions; publication preparation has not executed them against the project:
+## Prepare and publish
+
+The [beta procedure](BETA_RELEASE.md) reproduces the evidence and packaging. To restage the verified assets:
 
 ```powershell
-git init -b main
-.\.venv\Scripts\python.exe scripts/audit_publication.py
-git add .
-git status --short
-git diff --cached --stat
-git diff --cached --check
-# Review the staged files, then create the first commit when satisfied.
+.\.venv\Scripts\python.exe scripts/prepare_beta_release.py
 ```
 
-The source audit should pass before staging. Confirm that no `dist`, `build`, `.venv`, dataset, checkpoint binary, archive or installer appears in the staged list. Create the remote and upload release assets yourself after the licensing checks; no automatic push command is provided.
+`release-manifest.json` reports `ready_for_upload`, hashes and exact paths. `release-notes.md` is the prepared prerelease body. The optional `CREATE_GITHUB_DRAFT.ps1` verifies asset hashes and uses GitHub CLI to create a private draft only after the intended tag exists. Browser upload through GitHub Releases is also sufficient; GitHub CLI is not an end-user dependency.
+
+Review and commit the source changes before tagging. These are manual instructions; no command below has been executed automatically:
+
+```powershell
+git status --short
+git add .gitattributes README.md THIRD_PARTY_NOTICES.md docs desktop scripts tests/test_beta_release.py
+git diff --cached --stat
+git diff --cached --check
+# Review, commit, and create the v1.0.0-beta.1 tag when satisfied.
+```
+
+The maintainer approved source commit/push and public prerelease publication. The connected GitHub integration can commit the audited source when the local executor cannot write `.git`. `scripts/publish_github_release.ps1` then fast-forwards local Git metadata without changing working files, tags the exact source commit, uploads the verified files into a draft, checks remote asset sizes/digests, and publishes it as a prerelease. It never rebuilds or edits the application. Publication results are recorded separately under ignored `.cache/github-publication/` and in the release's `release-provenance.json` asset. No runtime/licence or installation-verification item remains open for this beta payload.

@@ -1,0 +1,4 @@
+# Preserve archived licence evidence and matching covered source byte for byte.
+# This keeps recorded SHA256 values stable across Windows/Linux checkouts.
+docs/licenses/vendor/** -text
+docs/licenses/covered-source/** -text

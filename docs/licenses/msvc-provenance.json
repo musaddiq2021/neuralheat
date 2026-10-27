@@ -1,0 +1,204 @@
+{
+  "reviewed": "2026-10-27",
+  "original_build_id": "20261021-184035-046",
+  "msvc": [
+    {
+      "bundled_file": "_internal/msvcp140.dll",
+      "bundled_bytes": 643512,
+      "bundled_sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca",
+      "recorded_collection_source": "C:\\Windows\\system32\\msvcp140.dll",
+      "source_present": true,
+      "current_source_sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca",
+      "absolute_packaged_path": "D:\\neuralheat\\dist\\desktop\\20261021-184035-046\\NeuralHeat Studio\\_internal\\msvcp140.dll",
+      "version": "14.51.36247.0",
+      "signature": "Valid",
+      "original_filename": "msvcp140.dll",
+      "matches_current_collection_source": true,
+      "matching_licensed_redist_files": [
+        {
+          "path": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Redist\\MSVC\\14.51.36231\\x64\\Microsoft.VC145.CRT\\msvcp140.dll",
+          "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca",
+          "file_version": "14.51.36247.0",
+          "bytes": 643512
+        }
+      ],
+      "licensed_source_identity_verified": true,
+      "redistribution_disposition": "Exact licensed release CRT match; observe applicable Community distribution conditions.",
+      "installed_licensed_tree_identity_verified": true
+    },
+    {
+      "bundled_file": "_internal/vcruntime140.dll",
+      "bundled_bytes": 178616,
+      "bundled_sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7",
+      "recorded_collection_source": "C:\\Windows\\system32\\vcruntime140.dll",
+      "source_present": true,
+      "current_source_sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7",
+      "absolute_packaged_path": "D:\\neuralheat\\dist\\desktop\\20261021-184035-046\\NeuralHeat Studio\\_internal\\vcruntime140.dll",
+      "version": "14.51.36247.0",
+      "signature": "Valid",
+      "original_filename": "vcruntime140.dll",
+      "matches_current_collection_source": true,
+      "matching_licensed_redist_files": [
+        {
+          "path": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Redist\\MSVC\\14.51.36231\\x64\\Microsoft.VC145.CRT\\vcruntime140.dll",
+          "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7",
+          "file_version": "14.51.36247.0",
+          "bytes": 178616
+        }
+      ],
+      "licensed_source_identity_verified": true,
+      "redistribution_disposition": "Exact licensed release CRT match; observe applicable Community distribution conditions.",
+      "installed_licensed_tree_identity_verified": true
+    },
+    {
+      "bundled_file": "_internal/vcruntime140_1.dll",
+      "bundled_bytes": 50112,
+      "bundled_sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e",
+      "recorded_collection_source": "C:\\Windows\\system32\\vcruntime140_1.dll",
+      "source_present": true,
+      "current_source_sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e",
+      "absolute_packaged_path": "D:\\neuralheat\\dist\\desktop\\20261021-184035-046\\NeuralHeat Studio\\_internal\\vcruntime140_1.dll",
+      "version": "14.51.36247.0",
+      "signature": "Valid",
+      "original_filename": "vcruntime140_1.dll",
+      "matches_current_collection_source": true,
+      "matching_licensed_redist_files": [
+        {
+          "path": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Redist\\MSVC\\14.51.36231\\x64\\Microsoft.VC145.CRT\\vcruntime140_1.dll",
+          "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e",
+          "file_version": "14.51.36247.0",
+          "bytes": 50112
+        }
+      ],
+      "licensed_source_identity_verified": true,
+      "redistribution_disposition": "Exact licensed release CRT match; observe applicable Community distribution conditions.",
+      "installed_licensed_tree_identity_verified": true
+    },
+    {
+      "bundled_file": "_internal/numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+      "bundled_bytes": 575056,
+      "bundled_sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde",
+      "recorded_collection_source": "D:\\neuralheat\\.venv\\Lib\\site-packages\\numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+      "source_present": true,
+      "current_source_sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde",
+      "absolute_packaged_path": "D:\\neuralheat\\dist\\desktop\\20261021-184035-046\\NeuralHeat Studio\\_internal\\numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+      "version": "14.40.33810.0",
+      "signature": "Valid",
+      "original_filename": "msvcp140.dll",
+      "matches_current_collection_source": true,
+      "matching_licensed_redist_files": [],
+      "licensed_source_identity_verified": true,
+      "redistribution_disposition": "Resolved for unchanged application-local object code through licensed Visual Studio publisher grant, 2026 REDIST separately downloaded runtime provision, exact official Microsoft package provenance, and retained downstream conditions. Runtime EULA alone is not the grant.",
+      "official_source_identity_verified": true,
+      "official_runtime_package_match": {
+        "manifest_url": "https://github.com/microsoft/winget-pkgs/blob/master/manifests/m/Microsoft/VCRedist/2015%2B/x64/14.40.33810.0/Microsoft.VCRedist.2015%2B.x64.installer.yaml",
+        "download_url": "https://download.visualstudio.microsoft.com/download/pr/1754ea58-11a6-44ab-a262-696e194ce543/3642E3F95D50CC193E4B5A0B0FFBF7FE2C08801517758B4C8AEB7105A091208A/VC_redist.x64.exe",
+        "installer_sha256": "3642e3f95d50cc193e4b5a0b0ffbf7fe2c08801517758b4c8aeb7105a091208a",
+        "installer_signature": {
+          "signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+          "status": "Valid"
+        },
+        "extracted_file": "msvcp140.dll_amd64",
+        "bytes": 575056,
+        "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde",
+        "comparison": "Exact SHA256 equality to installed NumPy wheel and original packaged copy; no DLL replaced or modified.",
+        "runtime_eula_id": "Cpp_2015-2022_ENU.1033",
+        "runtime_eula": "docs/licenses/vendor/Microsoft-Visual-Cpp-Runtime-14.40-ENU.txt",
+        "runtime_original_rtf": "docs/licenses/vendor/Microsoft-Visual-Cpp-Runtime-14.40-ENU.rtf",
+        "original_rtf_sha256": "8099dc3cf9502c335da829e5c755948a12e3e6de490eb492a99deb673d883d8b"
+      },
+      "installed_licensed_tree_identity_verified": false,
+      "identity_basis": "Separately downloaded official Microsoft release package under the documented licensed-user redistribution route; not an installed-tree match"
+    }
+  ],
+  "numpy_wheel": {
+    "version": "2.5.4",
+    "installer": "pip",
+    "direct_url": null,
+    "record_path": "numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+    "record_sha256_urlsafe_base64": "pMIim9wqKmMKzcCVtNhgCOXD47x3cxdDVPPaT1vrnN4",
+    "matches_record": true
+  },
+  "license_entitlement_established": true,
+  "original_provenance_review_date": "2026-10-22",
+  "installation": {
+    "instanceId": "b7bb7172",
+    "displayName": "Visual Studio Community 2026",
+    "productId": "Microsoft.VisualStudio.Product.Community",
+    "installationPath": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community",
+    "installationVersion": "18.11.12315.225",
+    "installDate": "2026-10-22T12:24:14Z",
+    "isComplete": true,
+    "isLaunchable": true,
+    "isPrerelease": false,
+    "isRebootRequired": false,
+    "channelId": "VisualStudio.18.Release",
+    "display_version": "18.11.1",
+    "selected_cpp_components": [
+      {
+        "id": "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+        "version": "18.11.12301.404",
+        "type": "Component",
+        "selectedState": "GroupSelected",
+        "userSelectedState": "Implicit"
+      },
+      {
+        "id": "Microsoft.VisualStudio.Component.VC.Redist.14.Latest",
+        "version": "18.11.12301.404",
+        "type": "Component",
+        "selectedState": "GroupSelected",
+        "userSelectedState": "Implicit"
+      },
+      {
+        "id": "Microsoft.VisualStudio.Workload.NativeDesktop",
+        "version": "18.9.11915.232",
+        "type": "Workload",
+        "productArch": "x64",
+        "selectedState": "GroupSelected",
+        "userSelectedState": "Explicit"
+      }
+    ],
+    "setup_catalog_license_url": "https://go.microsoft.com/fwlink/?LinkId=2327616",
+    "evidence_collected_at": "2026-10-23T10:30:12.5871828Z"
+  },
+  "publisher_acceptance": {
+    "confirmed_on": "2026-10-23",
+    "exact_accepted_on": null,
+    "confirmation": "Visual Studio Community 2026 is now installed, including the Desktop development with C++ workload. I accepted the Microsoft licence terms during installation.",
+    "source": "Publisher message in this project conversation",
+    "individual_project_statement": "NeuralHeat is an independently developed, MIT-licensed open-source personal project.",
+    "accepted_by_agent": false
+  },
+  "terms_review": {
+    "terms_url": "https://visualstudio.microsoft.com/license-terms/vs2026-ga-community/",
+    "document_url": "https://visualstudio.microsoft.com/wp-content/uploads/2025/10/Visual_Studio_2026-License-Community_ENU.docx",
+    "full_document_reviewed": true,
+    "status": "Official Community 2026 original DOCX and readable text archived; Distributable Code, Scope of License, individual-use and distribution conditions reviewed.",
+    "redist_list_reviewed": "https://learn.microsoft.com/en-us/visualstudio/releases/2026/redistribution#visual-c-runtime-files",
+    "reviewed_on": "2026-10-27",
+    "original_docx": "docs/licenses/vendor/Microsoft-Visual-Studio-Community-2026.docx",
+    "docx_sha256": "02ac07637f4a513a807cd3721c7620433fc483bc049d25784b0c10c54b05e1fb",
+    "docx_bytes": 69066,
+    "readable_document": "docs/licenses/vendor/Microsoft-Visual-Studio-Community-2026.txt",
+    "eula_id": "VS2026_Comm_ENU.1033",
+    "document_updated": "2025-10-01",
+    "applicable_conditions": [
+      "Individual development of the publisher's own application is permitted.",
+      "Distribute permitted unmodified release object code with significant primary application functionality.",
+      "Require protective downstream terms; retain notices; do not distribute preview/debug components or relicense proprietary runtime code under an excluded licence.",
+      "Publisher distribution indemnity and applicable trade/export conditions remain obligations under the already accepted terms."
+    ]
+  },
+  "official_x64_redistributable": {
+    "path": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Redist\\MSVC\\v145\\vc_redist.x64.exe",
+    "version": "14.51.36247.0",
+    "bytes": 18731856,
+    "sha256": "843068991daaa1f73ad9f6239bce4d0f6a07a51f18c37ea2a867e9beca71295c",
+    "signature": "Valid",
+    "signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  "license_entitlement_scope": "Community 2026 installation and publisher-confirmed acceptance for the stated individual project; not a blanket clearance of every bundled binary.",
+  "msvc_redistribution_fully_resolved": true,
+  "remaining": [],
+  "resolution_scope": "Documented MSVC licence/provenance route for these exact four unchanged release DLLs and this publisher; preserve protective installation terms and notices. Not a new vendor permission letter."
+}

@@ -1,11 +1,14 @@
 # -*- mode: python ; coding: utf-8 -*-
 """Windows x64 onedir release. Build only with scripts/build_desktop.ps1."""
 import os
+import sys
 from pathlib import Path
 
 from PyInstaller.utils.hooks import collect_data_files, collect_dynamic_libs, copy_metadata
 
 root = Path(SPECPATH).parent
+sys.path.insert(0, str(root / "desktop"))
+from freeze_policy import exclude_unused_cusolvermg
 assets = Path(os.environ["NEURALHEAT_STAGED_ASSETS"])
 if not (assets / "asset-manifest.json").is_file():
     raise RuntimeError("Stage and verify release assets before freezing")
@@ -44,4 +47,5 @@ exe = EXE(
     version=str(root / "desktop/version_info.txt"),
     contents_directory="_internal",
 )
-coll = COLLECT(exe, a.binaries, a.datas, strip=False, upx=False, name="NeuralHeat Studio")
+coll = COLLECT(exe, exclude_unused_cusolvermg(a.binaries, a.datas), a.datas,
+               strip=False, upx=False, name="NeuralHeat Studio")

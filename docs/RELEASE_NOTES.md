@@ -1,4 +1,4 @@
-# NeuralHeat Studio v1.0.0 — release draft
+# NeuralHeat Studio v1.0.0-beta.1 — Windows prerelease
 
 A Windows scientific computing workstation for 2D heat diffusion and PyTorch surrogate inspection.
 
@@ -12,8 +12,8 @@ The reference CNN achieved **2.10% global relative L2 error** over 300 held-out 
 
 ## Download and install
 
-Download `NeuralHeat-Studio-Setup.exe`, `SHA256SUMS.txt`, `NeuralHeat-Studio-Third-Party-Notices.txt` and `NeuralHeat-Studio-Certifi-2026.4.22-Source.zip`. Keep the accompanying notices and covered source with the installer. The setup is **1.864 GB / 1.736 GiB**, contains the full CPU/CUDA application and makes no downloads. Windows 10 1809+ / Windows 11 x64 and preinstalled WebView2 are required. CUDA requires a compatible NVIDIA driver; CPU fallback is included. No separate Python, Node.js or CUDA Toolkit is needed. The unsigned installer may trigger SmartScreen.
+Download `NeuralHeat-Studio-Setup.exe`, `SHA256SUMS.txt`, `NeuralHeat-Studio-Third-Party-Notices.txt` and `NeuralHeat-Studio-Certifi-2026.4.22-Source.zip`. Keep the notices and covered source with the installer. The verified setup is **1.813 GB / 1.689 GiB**, contains the full CPU/CUDA application and makes no downloads. Windows 10 1809+ / Windows 11 x64 and preinstalled WebView2 are required. CUDA requires a compatible NVIDIA driver; CPU fallback is included. No separate Python, Node.js or CUDA Toolkit is needed. The unsigned installer may trigger SmartScreen.
 
 The optional `best.pt` asset lets source users load the reference checkpoint after generating its matching dataset. Keep the supplied SHA256 unchanged when sharing that checkpoint.
 
-**Maintainer publication gate:** screenshots and the dated Windows verification attestation are included. Resolve the specific MSVC entitlement/provenance and cuSOLVER Mg redistribution follow-ups in [PUBLICATION.md](PUBLICATION.md) and [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) before publishing this draft. No upload or tag has been created.
+The Microsoft review is complete and full terms are archived. The Mg-free installer passed actual Program Files installation, CPU/CUDA, training/cancellation, all native workspaces and resizing, shortcuts, AppData and uninstall preservation. Source integrity verified all 2,801 files. The measured setup is **1,813,363,530 bytes (1.813 GB / 1.689 GiB)**; SHA256 is `ecf3f57dcc2f8b50144c42e505559f71550d1f75466c3734aab16ec78d69171f`. The release source corresponds to the verified application; only packaging, licence and publication materials were finalised after freezing.

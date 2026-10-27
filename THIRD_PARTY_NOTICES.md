@@ -1,8 +1,8 @@
 # Third-party notices and redistribution review
 
-NeuralHeat's own source is [MIT licensed](LICENSE). Dependencies retain their licenses. This review concerns the existing verified Windows payload; it does not modify its DLLs, checkpoint, scientific results or installer.
+NeuralHeat's own source is [MIT licensed](LICENSE). Dependencies retain their licenses. This review covers the verified Mg-free beta, with unchanged scientific assets. The original DLLs, checkpoint, scientific results and older installer remain preserved.
 
-**Public binary distribution remains pending the specific evidence listed below.** Source-repository preparation and application verification are separate from redistribution entitlement.
+**The redistribution review and actual Windows installation verification are complete for v1.0.0-beta.1.** The release omits cuSOLVERMg, retains the documented Microsoft/NVIDIA conditions, and includes complete notices and covered source. See the [verified beta record](docs/verification/windows-beta.json). This does not clear the preserved older retained-Mg installer as a different payload.
 
 ## Notices prepared for the existing release
 
@@ -27,7 +27,7 @@ certifi's public CA data was byte-compared with the frozen payload. Its matching
 
 ## Deliver these materials with the installer
 
-The original build includes Python notices but omits the frontend license texts. That omission is addressed in the **accompanying distribution materials**, preserving the verified installer unchanged:
+The original installer remains unchanged. The new beta includes complete upstream notices, certifi covered source and protective installation terms inside the installed application. Also deliver these accompanying release materials:
 
 ```text
 NeuralHeat-Studio-Setup.exe
@@ -40,40 +40,42 @@ The added files are prepared under `dist/release-support/`. The complete notice 
 
 The notice/source attachments are not another application ZIP and do not change the verified EXE. Checksums identify each release asset; no upload has occurred.
 
-## NVIDIA review
+## NVIDIA review and practical resolution
 
-The [CUDA 12.8.1 archived agreement](https://docs.nvidia.com/cuda/archive/12.8.1/eula/index.html), Attachment A, identifies runtime, BLAS/Lt, FFT/w, random, sparse, solver, runtime-compilation/builtins, JIT-link and NVTX families, allowing version/architecture filename variants. The [cuDNN 9.19.0 supplement](https://docs.nvidia.com/deeplearning/cudnn/backend/v9.19.0/reference/eula.html) expressly identifies runtime DLLs as distributable. Their grants remain conditional on the application distribution requirements.
+The original payload's actual file is **`cusolverMg64_11.dll`** (157,071,360 bytes). The earlier shortened name `cusolverMg11.dll` was incorrect. Its original location is `dist/desktop/20261021-184035-046/NeuralHeat Studio/_internal/torch/lib/`. The original PyInstaller TOC traces it to the matching PyTorch 2.11.0+cu128 wheel file; packaged bytes, source bytes and wheel RECORD all match.
 
-NeuralHeat adds substantial simulation and scientific inspection functionality. The accompanying terms limit proprietary runtime access/distribution to the application and preserve vendor restrictions, notices and ownership; those restrictions do not relicense NeuralHeat's MIT source. CUDA code targets NVIDIA GPUs, with an independent CPU path.
+The [CUDA 12.8.1 agreement](https://docs.nvidia.com/cuda/archive/12.8.1/eula/index.html) and [exact cuSOLVER component license](https://developer.download.nvidia.com/compute/cuda/redist/libcusolver/LICENSE.txt) were checked. The [official manifest](https://developer.download.nvidia.com/compute/cuda/redist/redistrib_12.8.1.json) identifies cuSOLVER 11.7.3.90. Both reviewed lists name ordinary `cusolver.dll`, without explicitly naming Mg; ordinary-family membership is not treated here as an express Mg grant. The complete component license is now retained separately in the vendor notices.
 
-**Specific unresolved mapping:** `cusolverMg11.dll` is bundled. The generic CUDA Attachment A names `cusolver.dll`, but does not explicitly name the Mg variant. Do not infer that an arbitrary filename variation is a redistribution grant. Retain the matching cuSOLVER package license/redistribution evidence, or obtain NVIDIA's confirmation for that component, before closing this item. No DLL was removed to avoid the question.
+**Removal route investigated and implemented experimentally:** none of the 111 inspected PE files imports Mg, and NeuralHeat does not call the multi-GPU solver. PyTorch ordinarily eagerly loads every DLL in its Windows library directory; a real probe confirmed Mg is loaded at import in the original environment. A controlled exclusion copy and a fresh guarded PyInstaller build both run without it, preserving ordinary cuSOLVER and all other CUDA components.
 
-The official [CUDA 12.8.1 redistribution manifest](https://developer.download.nvidia.com/compute/cuda/redist/redistrib_12.8.1.json) identifies cuSOLVER 11.7.3.90 and points to its [component license](https://developer.download.nvidia.com/compute/cuda/redist/libcusolver/LICENSE.txt). That component document was also checked: its Attachment A still lists `cusolver.dll` without naming Mg. The manifest provides package provenance; it does not resolve that specific grant ambiguity by itself.
+Both candidates passed frozen CPU/CUDA inference, solver comparison, real activations, smoke training, cancellation and benchmark generation. PSAPI confirmed no Mg DLL or original/venv fallback. Earlier restricted WebView2 failures remain historical evidence. On 27 October the actual new Program Files installation passed all four native pages, resize, CPU/CUDA/worker, shortcuts, AppData and uninstall tests. The equivalent guarded exclusion is now adopted in production packaging; the original build remains intact.
+
+The [experiment record](docs/CUSOLVERMG_EXPERIMENT.md) and [public summary](docs/licenses/cusolvermg-experiment.json) preserve both historical failures and the final installed verification. This release contains no Mg component, so no grant for that omitted file or vendor enquiry is needed. The [unsent enquiry](docs/NVIDIA_LICENSING_ENQUIRY.md) remains only a fallback for a different payload that retains it.
+
+The retained [cuDNN 9.19.0 supplement](https://docs.nvidia.com/deeplearning/cudnn/backend/v9.19.0/reference/eula.html) explicitly identifies runtime DLLs as distributable, subject to its conditions. Existing NVIDIA agreements/notices and the accompanying application terms continue to apply to the libraries still shipped.
 
 ## Microsoft Visual C++ review
 
-Read-only machine inspection on 22 October 2026 found **Visual Studio Code and VC++ Redistributables**, but no registered Visual Studio IDE or Build Tools installation. Standard Visual Studio setup registry keys, `vswhere.exe`, ProgramData instance records and standard install directories were absent. This does not rule out a valid licensed copy on another machine; it does mean the local runtime installation establishes no such entitlement.
+**Resolved for this unchanged runtime payload, 27 October 2026.** Visual Studio Community 2026 18.11.1 is installed with the C++ desktop workload. The publisher confirmed accepting its terms. The complete [official Community DOCX](docs/licenses/vendor/Microsoft-Visual-Studio-Community-2026.docx) and [readable text](docs/licenses/vendor/Microsoft-Visual-Studio-Community-2026.txt) are archived and reviewed; no repeat acceptance is needed.
 
-All four discovered MSVC runtime DLLs have **valid Microsoft Authenticode signatures**. Full filenames, original filenames, versions, hashes and signature results are in [msvc-binaries.json](docs/licenses/msvc-binaries.json).
+The three root 14.51.36247.0 CRT DLLs exactly match the installed licensed release CRT directory. NumPy's 14.40.33810.0 DLL now also has an exact SHA256 match to object code extracted from the official signed Microsoft runtime installer identified in Microsoft's manifest. Its existing hash-renamed file and NumPy imports remain unchanged.
 
-| Bundled file | Version | Verification |
+| Bundled file | Version | Official provenance |
 |---|---|---|
-| `_internal/msvcp140.dll` | 14.51.36247.0 | Original filename matches; Microsoft signature valid |
-| `_internal/vcruntime140.dll` | 14.51.36247.0 | Original filename matches; Microsoft signature valid |
-| `_internal/vcruntime140_1.dll` | 14.51.36247.0 | Original filename matches; Microsoft signature valid |
-| `_internal/numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll` | 14.40.33810.0 | Original filename is `msvcp140.dll`; Microsoft signature valid; suffix matches content hash |
+| `_internal/msvcp140.dll` | 14.51.36247.0 | Exact installed licensed CRT match |
+| `_internal/vcruntime140.dll` | 14.51.36247.0 | Exact installed licensed CRT match |
+| `_internal/vcruntime140_1.dll` | 14.51.36247.0 | Exact installed licensed CRT match |
+| `_internal/numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll` | 14.40.33810.0 | Exact official runtime-package match |
 
-The [Visual Studio 2026 REDIST list](https://learn.microsoft.com/en-us/visualstudio/releases/2026/redistribution) permits unmodified files beneath a licensed copy's `VC/redist` tree, excluding the debug directories. It is a directory-based grant, not a public filename/version whitelist. These are release CRT file identities, not debug CRT names, and their valid signatures support byte integrity. Without a licensed reference copy, the inspection cannot prove exact correspondence to its permitted directory. The NumPy file also has an older runtime version and a renamed filename; retain its wheel/runtime provenance and applicable grant rather than treating the 2026 list as proof of every copied version.
+The accepted Community **Distributable Code** grant and [2026 REDIST separately downloaded runtime provision](https://learn.microsoft.com/en-us/visualstudio/releases/2026/redistribution#visual-c-runtime-files) are the redistribution basis for this licensed publisher. The [runtime EULA](docs/licenses/vendor/Microsoft-Visual-Cpp-Runtime-14.40-ENU.txt) is retained but is not treated as an independent redistribution grant. The older file is not falsely described as a match in the installed 14.51 tree.
 
-Microsoft's [redistribution guidance](https://learn.microsoft.com/en-us/cpp/windows/redistributing-visual-cpp-files) limits distribution to licensed Visual Studio users. Its [Community usage guidance](https://visualstudio.microsoft.com/vs/community/) permits individual developers to create their own free or paid applications. The maintainer's stated independent, personal MIT project fits that individual-use description; **eligibility does not establish acquisition or acceptance of a license**.
+NeuralHeat supplies significant primary functionality. Distribute these files unmodified, retain their notices and protective downstream terms, avoid debug/preview components and conflicting source-disclosure licensing, and observe the accepted publisher indemnity and applicable trade conditions. Setup presents MIT plus the [binary conditions](docs/licenses/BINARY_DISTRIBUTION_TERMS.txt), and complete upstream notices accompany the app. Users need no Visual Studio installation merely to run NeuralHeat.
 
-The supplied [license directory](https://visualstudio.microsoft.com/license-terms/) and [Community 2026 terms page](https://visualstudio.microsoft.com/license-terms/vs2026-ga-community/) identify the official sources. The terms page embeds a DOCX which this executor could not retrieve for a full clause review. Providing a URL is not evidence that those terms were accepted.
-
-To close this item, provide the **actual licensed edition/version, license acceptance/acquisition confirmation and its applicable terms** (a local saved terms file is sufficient for review; no account credentials or product keys). Identify the licensed runtime source/REDIST grant covering the four DLLs, including the older NumPy copy. If the licensed copy is on another machine, identify that fact. Installing/accepting an eligible Community or Build Tools license is a publisher action; this review has not done so on the maintainer's behalf.
+See [MSVC documentation](docs/MSVC_REDISTRIBUTION.md) and [exact provenance](docs/licenses/msvc-provenance.json) for official URLs, document hashes, installed edition, signature results, extracted-file comparisons and continuing conditions. The original TOCs still correctly record the historical System32/wheel collection paths. No proprietary DLL was added to Git, replaced, renamed or removed to obtain this result. No additional Community installation or vendor permission letter is required for this documented route.
 
 ## Outcome and reproduction
 
-Frontend, exact WebView2 SDK, OpenSSL attribution, certifi source delivery and retained NVIDIA notice gaps now have concrete accompanying materials. **Do not declare the standalone installer publicly cleared yet:** MSVC entitlement/provenance and the cuSOLVER Mg redistribution mapping still require evidence, and the added notices/source must accompany every binary distribution.
+Frontend, exact WebView2 SDK, OpenSSL, certifi, NVIDIA and Microsoft materials are complete. **The MSVC review and normal-Windows installation/desktop validation are resolved.** Complete notices/source are included in the verified installer and accompanying release assets and must remain with redistribution. The installed notice bundle contains stable upstream conditions rather than transient release-test status.
 
 Inno Setup and Node.js are build tools, not separately installed application runtimes. Their build-tool terms do not replace bundled-component obligations. All original application and scientific assets remain preserved.
 
